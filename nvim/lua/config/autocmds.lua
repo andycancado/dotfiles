@@ -1,0 +1,28 @@
+-- Autocmds are automatically loaded on the VeryLazy event
+-- Default autocmds that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/autocmds.lua
+-- Add any additional autocmds here
+
+--
+-- autocmd({ "VimEnter" }, {
+--   -- group = augroup("VimEnter"),
+--   callback = function()
+--     if os.getenv("TMUX") then
+--       vim.api.nvim_command(":silent !tmux set status off")
+--     end
+--     -- if vim.o.buftype ~= 'nofile' then
+--     --   vim.cmd('checktime')
+--     -- end
+--   end,
+-- })
+--
+-- autocmd({ "VimLeave" }, {
+--   -- group = augroup("VimEnter"),
+--   callback = function()
+--     if os.getenv("TMUX") then
+--       vim.api.nvim_command(":! tmux set status on")
+--     end
+--     -- if vim.o.buftype ~= 'nofile' then
+--     --   vim.cmd('checktime')
+--     -- end
+--   end,
+-- })

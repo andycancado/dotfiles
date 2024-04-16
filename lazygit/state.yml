@@ -1,0 +1,20 @@
+lastupdatecheck: 0
+recentrepos:
+    - /home/anderson/compiled/llm.c
+    - /home/anderson/research/mojo_dojo/mist
+    - /home/anderson/research/mojo_dojo/mojo-fast-base64
+    - /home/anderson/research/max
+    - /home/anderson/research/mojo_dojo/sudoku_resolver
+    - /home/anderson/research/rust/ai-func
+    - /home/anderson/Proj/gaspardbruno/visio-llama-serve
+startuppopupversion: 5
+lastversion: ed61b9a7
+customcommandshistory:
+    - q
+hidecommandlog: false
+ignorewhitespaceindiffview: false
+diffcontextsize: 4
+localbranchsortorder: recency
+remotebranchsortorder: alphabetical
+gitlogorder: topo-order
+gitlogshowgraph: always
