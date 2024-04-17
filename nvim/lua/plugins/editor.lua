@@ -68,6 +68,18 @@ return {
         desc = "Find Plugin File",
       },
       {
+        ";w",
+        function()
+          local builtin = require("telescope.builtin")
+          builtin.current_buffer_fuzzy_find({
+            hidden = false,
+            no_ignore = false,
+            fuzy = false,
+          })
+        end,
+        desc = "Find in current buffer, respects .gitignore",
+      },
+      {
         ";f",
         function()
           local builtin = require("telescope.builtin")
@@ -129,7 +141,7 @@ return {
         desc = "Lists Function names, variables, from Treesitter",
       },
       {
-        "sf",
+        ";ss",
         function()
           local telescope = require("telescope")
 
