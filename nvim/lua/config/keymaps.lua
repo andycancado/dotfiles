@@ -52,6 +52,9 @@ vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 -- for fast repalce
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
+vim.keymap.set("n", "]g", vim.diagnostic.goto_next)
+vim.keymap.set("n", "[g", vim.diagnostic.goto_prev)
+
 -- -- don't be a pussy, just use hjkl
 -- vim.keymap.set("i", "<Up>", '<C-o>:echom "--> k <-- "<CR>')
 -- vim.keymap.set("i", "<Down>", '<C-o>:echom "--> j <-- "<CR>')
