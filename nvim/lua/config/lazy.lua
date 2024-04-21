@@ -30,8 +30,6 @@ require("lazy").setup({
         require("inc_rename").setup()
       end,
     },
-    -- visual multi
-    { "mg979/vim-visual-multi" },
     {
       "rcarriga/nvim-notify",
       opts = {

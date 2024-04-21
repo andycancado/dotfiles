@@ -7,7 +7,7 @@ return {
       end,
     },
     diagnostics = {
-      virtual_text = false,
+      virtual_text = true,
     },
   },
 }
