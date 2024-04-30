@@ -36,16 +36,23 @@ require("lazy").setup({
         background_colour = "#000000",
       },
     },
+    -- {
+    --   "Mr-LLLLL/cool-chunk.nvim",
+    --   event = { "CursorHold", "CursorHoldI" },
+    --   dependencies = {
+    --     "nvim-treesitter/nvim-treesitter",
+    --   },
+    --   config = function()
+    --     require("cool-chunk").setup({})
+    --   end,
+    -- },
     -- Lazy
-    {
-      "dgagn/diagflow.nvim",
-      -- event = 'LspAttach', This is what I use personnally and it works great
-      opts = {},
-    },
+    -- {
+    --   "dgagn/diagflow.nvim",
+    --   -- event = 'LspAttach', This is what I use personnally and it works great
+    --   opts = {},
+    -- },
   },
-  -- { "catppuccin/nvim", name = "catppuccin", priority = 1000, opts = {
-  --   transpatent = true,
-  -- } },
   defaults = {
     -- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.
     -- If you know what you're doing, you can set this to `true` to have all your custom plugins lazy-loaded by default.

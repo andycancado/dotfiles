@@ -69,13 +69,13 @@ return {
           vim.bo.tabstop = 4
           vim.bo.commentstring = "# %s"
 
-          vim.lsp.start({
-            name = "mojo",
-            cmd = { "mojo-lsp-server" },
-            root_dir = util.root.get(),
-          }, {
-            bufnr = vim.api.nvim_get_current_buf(),
-          })
+          -- vim.lsp.start({
+          --   name = "mojo",
+          --   cmd = { "mojo-lsp-server" },
+          --   root_dir = util.root.get(),
+          -- }, {
+          --   bufnr = vim.api.nvim_get_current_buf(),
+          -- })
         end,
       })
     end,
