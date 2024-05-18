@@ -1,13 +1,22 @@
-return {
-  "neovim/nvim-lspconfig",
-  opts = {
-    setup = {
-      rust_analyzer = function()
-        return false
-      end,
-    },
-    diagnostics = {
-      virtual_text = true,
-    },
-  },
-}
+return {}
+-- return {
+--   -- change nvim-lspconfig options
+--   "neovim/nvim-lspconfig",
+--   opts = {
+--     servers = {
+--       -- https://github.com/microsoft/pyright/discussions/5852#discussioncomment-6874502
+--       pyright = {
+--         capabilities = {
+--           textDocument = {
+--             publishDiagnostics = {
+--               tagSupport = {
+--                 valueSet = { 2 },
+--               },
+--             },
+--           },
+--         },
+--       },
+--       ruff_lsp = {},
+--     },
+--   },
+-- }
