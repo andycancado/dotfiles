@@ -68,6 +68,11 @@ vim.api.nvim_create_user_command("CopilotToggle", function()
 end, { nargs = 0 })
 vim.keymap.set("n", "<leader>ch", ":CopilotToggle<CR>", { noremap = true, silent = true })
 
+-- toggle inlays
+vim.keymap.set("n", "<leader>h", function()
+  vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+end)
+--
 -- -- don't be a pussy, just use hjkl
 -- vim.keymap.set("i", "<Up>", '<C-o>:echom "--> k <-- "<CR>')
 -- vim.keymap.set("i", "<Down>", '<C-o>:echom "--> j <-- "<CR>')
