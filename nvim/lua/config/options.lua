@@ -9,6 +9,8 @@
 --
 -- vim.opt.number = true
 --
+vim.opt.shell = "/bin/bash"
+vim.opt.relativenumber = false
 vim.opt.title = true
 vim.opt.autoindent = true
 vim.opt.smartindent = true

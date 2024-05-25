@@ -29,5 +29,10 @@ return {
       -- load_extension, somewhere after setup function:
       require("telescope").load_extension("ui-select")
     end,
+    defaults = {
+      prompt_prefix = "󰼛 ",
+
+      selection_caret = "󱞩 ",
+    },
   },
 }
