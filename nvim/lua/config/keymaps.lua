@@ -1,6 +1,8 @@
 -- Keymaps are automatically loaded on the VeryLazy event
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
+local wk = require("which-key")
+
 vim.api.nvim_set_keymap("n", "<C-j>", "}", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<C-k>", "{", { noremap = true, silent = true })
 
@@ -72,6 +74,27 @@ vim.keymap.set("n", "<leader>ch", ":CopilotToggle<CR>", { noremap = true, silent
 vim.keymap.set("n", "<leader>h", function()
   vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
 end)
+
+local function visual_cursors_with_delay()
+  -- Execute the vm-visual-cursors command.
+  vim.cmd('silent! execute "normal! \\<Plug>(VM-Visual-Cursors)"')
+  -- Introduce delay via VimScript's 'sleep' (set to 500 milliseconds here).
+  vim.cmd("sleep 200m")
+  -- Press 'A' in normal mode after the delay.
+  vim.cmd('silent! execute "normal! A"')
+end
+
+wk.register({
+  m = {
+    name = "Visual Multi",
+    a = { "<Plug>(VM-Select-All)<Tab>", "Select All", mode = { "n" } },
+    r = { "<Plug>(VM-Start-Regex-Search)", "Start Regex Search", mode = { "n" } },
+    p = { "<Plug>(VM-Add-Cursor-At-Pos)", "Add Cursor At Pos", mode = { "n" } },
+    v = { visual_cursors_with_delay, "Visual Cursors", mode = { "v" } },
+    o = { "<Plug>(VM-Toggle-Mappings)", "Toggle Mapping", mode = { "n" } },
+  },
+}, { prefix = "<leader>" })
+
 --
 -- -- don't be a pussy, just use hjkl
 -- vim.keymap.set("i", "<Up>", '<C-o>:echom "--> k <-- "<CR>')
