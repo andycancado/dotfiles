@@ -24,7 +24,7 @@ return {
 ╚══════╝╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝  ╚═╝   ╚═╝    ╚═════╝ ╚═╝  ╚═╝╚══════╝╚═╝╚═╝  ╚═╝╚═╝
                                                                                        ]]
 
-      if jit.os == "Linux" then
+      if jit.os ~= "Linux" then
         logo = logoMac
       end
       logo = string.rep("\n", 6) .. logo .. "\n\n"
