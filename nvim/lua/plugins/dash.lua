@@ -4,7 +4,6 @@ return {
     "nvimdev/dashboard-nvim",
     opts = function(_, opts)
       local jit = require("jit")
-      print(jit.os)
       -- figlet font "The Edge"
       local logo = [[
          █████╗ ███╗   ██╗██████╗ ██╗   ██╗     

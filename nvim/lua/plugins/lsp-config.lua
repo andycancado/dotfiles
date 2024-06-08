@@ -1,4 +1,16 @@
-return {}
+return {
+
+  {
+    "neovim/nvim-lspconfig",
+    opts = {
+      setup = {
+        rust_analyzer = function()
+          return true
+        end,
+      },
+    },
+  },
+}
 -- return {
 --   -- change nvim-lspconfig options
 --   "neovim/nvim-lspconfig",
