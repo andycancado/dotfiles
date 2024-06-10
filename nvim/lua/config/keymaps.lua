@@ -9,7 +9,7 @@ vim.api.nvim_set_keymap("n", "<C-k>", "{", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("v", "<C-j>", "}", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("v", "<C-k>", "{", { noremap = true, silent = true })
 
-vim.keymap.set("n", "<leader>rn", ":IncRename ")
+vim.keymap.set("n", "<leader>rn", ":IncRename ", { desc = "Rename" })
 
 vim.keymap.set("n", "<space>dd", "<cmd>Telescope diagnostics<cr>")
 local options = { noremap = true }
@@ -73,7 +73,7 @@ vim.keymap.set("n", "<leader>ch", ":CopilotToggle<CR>", { noremap = true, silent
 -- toggle inlays
 vim.keymap.set("n", "<leader>h", function()
   vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
-end)
+end, { desc = "Toggle Inlay Hint" })
 
 local function visual_cursors_with_delay()
   -- Execute the vm-visual-cursors command.

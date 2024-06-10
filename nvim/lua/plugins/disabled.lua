@@ -4,6 +4,7 @@ return {
   { "rcarriga/nvim-notify", enabled = true },
   -- { "nvim-neo-tree/neo-tree.nvim", enabled = false },
   { "folke/flash.nvim", enabled = true },
+  { "nvim-pack/nvim-spectre", enabled = false },
 
   -- temporarily disabled due to empty file issue
   -- { "nvim-navic", enabled = false },
