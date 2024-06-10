@@ -9,6 +9,12 @@ return {
         end,
       },
     },
+    -- config = function()
+    --   vim.diagnostic.config({
+    --     underline = true,
+    --     virtual_text = false,
+    --   })
+    -- end,
   },
 }
 -- return {

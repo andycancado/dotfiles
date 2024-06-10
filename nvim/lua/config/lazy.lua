@@ -18,34 +18,21 @@ require("lazy").setup({
     -- add LazyVim and import its plugins
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
     -- import any extras modules here
-    -- { import = "lazyvim.plugins.extras.lang.typescript" },
     { import = "lazyvim.plugins.extras.lang.json" },
-    -- { import = "lazyvim.plugins.extras.ui.mini-animate" },
     -- import/override with your plugins
     --
     { import = "plugins" },
+    -- { "sindrets/diffview.nvim" },
     {
-      "smjonas/inc-rename.nvim",
+      "Mr-LLLLL/cool-chunk.nvim",
+      event = { "CursorHold", "CursorHoldI" },
+      dependencies = {
+        "nvim-treesitter/nvim-treesitter",
+      },
       config = function()
-        require("inc_rename").setup()
+        require("cool-chunk").setup({})
       end,
     },
-    {
-      "rcarriga/nvim-notify",
-      opts = {
-        background_colour = "#000000",
-      },
-    },
-    -- {
-    --   "Mr-LLLLL/cool-chunk.nvim",
-    --   event = { "CursorHold", "CursorHoldI" },
-    --   dependencies = {
-    --     "nvim-treesitter/nvim-treesitter",
-    --   },
-    --   config = function()
-    --     require("cool-chunk").setup({})
-    --   end,
-    -- },
     -- Lazy
     -- {
     --   "dgagn/diagflow.nvim",
