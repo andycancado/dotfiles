@@ -3,18 +3,14 @@ return {
   {
     "neovim/nvim-lspconfig",
     opts = {
+      inlay_hints = { enabled = false },
       setup = {
         rust_analyzer = function()
           return true
         end,
       },
+      config = {},
     },
-    -- config = function()
-    --   vim.diagnostic.config({
-    --     underline = true,
-    --     virtual_text = false,
-    --   })
-    -- end,
   },
 }
 -- return {
