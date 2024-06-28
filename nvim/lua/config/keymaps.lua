@@ -30,6 +30,13 @@ vim.api.nvim_set_keymap("n", "<C-x>", ":bd<CR>", { noremap = true, silent = true
 vim.keymap.set("v", "<", "<gv")
 vim.keymap.set("v", ">", ">gv")
 
+-- allow deleting to void register
+vim.keymap.set("n", "<leader>d", '"_d')
+vim.keymap.set("v", "<leader>d", '"_d')
+
+-- allow for pasting over without losing buffer
+vim.keymap.set("x", "<leader>p", '"_dP')
+
 -- Tab navigation.
 vim.keymap.set("n", "<leader>tc", "<cmd>tabclose<cr>", { desc = "Close tab page" })
 vim.keymap.set("n", "<leader>tn", "<cmd>tab split<cr>", { desc = "New tab page" })

@@ -8,9 +8,11 @@ return {
       -- colorscheme = "terafox",
       colorscheme = "gruber-darker",
       -- colorscheme = "tokyonight-night",
-      -- colorscheme = "catppuccin-macchiato",
+      -- colorscheme = "catppuccin-mocha",
       -- colorscheme = "rose-pine-moon",
       -- colorscheme = "gruvbox",
+      -- colorscheme = "cyberdream",
+      -- colorscheme = "nightfox",
     },
   },
   {
@@ -24,7 +26,7 @@ return {
     name = "catppuccin",
     priority = 1000,
     opts = {
-      transparent = true,
+      transparent = false,
     },
   },
   { "EdenEast/nightfox.nvim" },
@@ -66,7 +68,7 @@ return {
     config = function()
       require("cyberdream").setup({
         -- Recommended - see "Configuring" below for more config options
-        transparent = true,
+        transparent = false,
         italic_comments = true,
         hide_fillchars = true,
         borderless_telescope = true,
