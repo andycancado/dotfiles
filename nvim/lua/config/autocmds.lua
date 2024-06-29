@@ -30,3 +30,31 @@
 --   desc = "Disable Copilot by default on startup",
 --   command = "Copilot disable",
 -- })
+-- Disable spell check in terminal
+vim.api.nvim_create_autocmd("TermOpen", {
+  callback = function()
+    vim.o.spell = false
+  end,
+})
+
+-- Move QuickFix window to the bottom
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "qf",
+  callback = function()
+    vim.cmd([[
+      wincmd J | setl nobuflisted
+    ]])
+  end,
+})
+-- Hide diagnostics when entering insert mode
+vim.api.nvim_create_autocmd({ "InsertEnter" }, {
+  callback = function()
+    vim.diagnostic.hide(nil, 0)
+  end,
+})
+
+vim.api.nvim_create_autocmd({ "InsertLeave" }, {
+  callback = function()
+    vim.diagnostic.show(nil, 0)
+  end,
+})
