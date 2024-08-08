@@ -33,6 +33,14 @@ require("lazy").setup({
         require("cool-chunk").setup({})
       end,
     },
+    {
+      "nvim-tree/nvim-web-devicons",
+    },
+    -- {
+    --   "Chaitanyabsprip/fastaction.nvim",
+    --   ---@type FastActionConfig
+    --   opts = {},
+    -- },
     -- Lazy
     -- {
     --   "dgagn/diagflow.nvim",
@@ -56,9 +64,9 @@ require("lazy").setup({
       -- disable some rtp plugins
       disabled_plugins = {
         "gzip",
-        -- "matchit",
-        -- "matchparen",
-        -- "netrwPlugin",
+        "matchit",
+        "matchparen",
+        "netrwPlugin",
         "tarPlugin",
         "tohtml",
         "tutor",

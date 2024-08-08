@@ -1,3 +1,17 @@
+local file_ignore_patterns = {
+  "yarn%.lock",
+  "node_modules/",
+  "raycast/",
+  "dist/",
+  "%.next",
+  "%.git/",
+  "%.gitlab/",
+  "build/",
+  "target/",
+  "package%-lock%.json",
+  "venv/**/*",
+}
+
 return {
   {
     enabled = false,
@@ -96,6 +110,7 @@ return {
           local builtin = require("telescope.builtin")
           builtin.live_grep({
             additional_args = { "--hidden" },
+            file_ignore_patterns = file_ignore_patterns,
           })
         end,
         desc = "Search for a string in your current working directory and get results live as you type, respects .gitignore",

@@ -6,13 +6,13 @@ return {
       -- background = "#000000",
       -- colorscheme = "nightfox",
       -- colorscheme = "terafox",
-      colorscheme = "gruber-darker",
-      -- colorscheme = "tokyonight-night",
+      -- colorscheme = "gruber-darker",
+      -- colorscheme = "tokyonight-moon",
       -- colorscheme = "catppuccin-mocha",
       -- colorscheme = "rose-pine-moon",
       -- colorscheme = "gruvbox",
       -- colorscheme = "cyberdream",
-      -- colorscheme = "nightfox",
+      colorscheme = "nightfox",
     },
   },
   {
@@ -40,27 +40,6 @@ return {
       },
     },
   },
-  { "ellisonleao/gruvbox.nvim" },
-  {
-    "sainnhe/gruvbox-material",
-    enabled = true,
-    priority = 1000,
-    config = function()
-      vim.g.gruvbox_material_transparent_background = 0
-      vim.g.gruvbox_material_foreground = "mix"
-      vim.g.gruvbox_material_background = "hard" -- soft, medium, hard
-      vim.g.gruvbox_material_ui_contrast = "high" -- The contrast of line numbers, indent lines, etc.
-      vim.g.gruvbox_material_float_style = "bright" -- Background of floating windows
-      vim.g.gruvbox_material_statusline_style = "material"
-      vim.g.gruvbox_material_cursor = "auto"
-
-      -- vim.g.gruvbox_material_colors_override = { bg0 = '#000000' } -- #0e1010
-      -- vim.g.gruvbox_material_colors_override = { bg0 = "#121212" }
-      -- vim.g.gruvbox_material_better_performance = 1
-
-      -- vim.cmd.colorscheme("gruvbox-material")
-    end,
-  },
   {
     "scottmckendry/cyberdream.nvim",
     lazy = false,
@@ -70,7 +49,7 @@ return {
         -- Recommended - see "Configuring" below for more config options
         transparent = false,
         italic_comments = true,
-        hide_fillchars = true,
+        hide_fillchars = false,
         borderless_telescope = true,
         terminal_colors = true,
       })
