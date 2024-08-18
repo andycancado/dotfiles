@@ -26,6 +26,9 @@ vim.api.nvim_set_keymap("n", "<C-l>", "<C-u>", { noremap = true, silent = true }
 vim.api.nvim_set_keymap("i", "jk", "<Right>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<C-x>", ":bd<CR>", { noremap = true, silent = true })
 
+-- -- mini file
+-- vim.keymap.set("n", "<space>e", "<cmd>lua MiniFiles.open()<cr>")
+
 -- Indent while remaining in visual mode.
 vim.keymap.set("v", "<", "<gv")
 vim.keymap.set("v", ">", ">gv")
