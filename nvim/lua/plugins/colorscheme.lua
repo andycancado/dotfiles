@@ -12,9 +12,11 @@ return {
       -- colorscheme = "rose-pine-moon",
       -- colorscheme = "gruvbox",
       -- colorscheme = "cyberdream",
-      colorscheme = "nightfox",
+      -- colorscheme = "nightfox",
+      colorscheme = "kanagawa-wave",
     },
   },
+  { "rebelot/kanagawa.nvim" },
   {
     "folke/tokyonight.nvim",
     lazy = false,
