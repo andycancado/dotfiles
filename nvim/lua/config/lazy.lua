@@ -36,6 +36,14 @@ require("lazy").setup({
     {
       "nvim-tree/nvim-web-devicons",
     },
+    {
+      "felpafel/inlay-hint.nvim",
+      event = "LspAttach",
+      config = true,
+      opts = {
+        virt_text_pos = "eol", --"inline",
+      },
+    },
     -- {
     --   "Chaitanyabsprip/fastaction.nvim",
     --   ---@type FastActionConfig
