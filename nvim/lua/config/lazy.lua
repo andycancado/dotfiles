@@ -23,14 +23,29 @@ require("lazy").setup({
     --
     { import = "plugins" },
     -- { "sindrets/diffview.nvim" },
+    -- {
+    --   "Mr-LLLLL/cool-chunk.nvim",
+    --   event = { "CursorHold", "CursorHoldI" },
+    --   dependencies = {
+    --     "nvim-treesitter/nvim-treesitter",
+    --   },
+    --   config = function()
+    --     require("cool-chunk").setup({})
+    --   end,
+    -- },
     {
-      "Mr-LLLLL/cool-chunk.nvim",
-      event = { "CursorHold", "CursorHoldI" },
-      dependencies = {
-        "nvim-treesitter/nvim-treesitter",
-      },
+      "shellRaining/hlchunk.nvim",
+      event = { "BufReadPre", "BufNewFile" },
       config = function()
-        require("cool-chunk").setup({})
+        require("hlchunk").setup({
+          chunk = {
+            enable = true,
+          },
+          -- indent = {
+          --   enable = true,
+          --   -- ...
+          -- },
+        })
       end,
     },
     {
