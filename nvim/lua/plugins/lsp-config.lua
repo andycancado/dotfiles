@@ -10,6 +10,12 @@ return {
         end,
       },
       config = {},
+      servers = {
+        pyright = {
+          mason = false,
+          autostart = false,
+        },
+      },
     },
   },
 }
