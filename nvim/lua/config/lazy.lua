@@ -23,16 +23,6 @@ require("lazy").setup({
     --
     { import = "plugins" },
     -- { "sindrets/diffview.nvim" },
-    -- {
-    --   "Mr-LLLLL/cool-chunk.nvim",
-    --   event = { "CursorHold", "CursorHoldI" },
-    --   dependencies = {
-    --     "nvim-treesitter/nvim-treesitter",
-    --   },
-    --   config = function()
-    --     require("cool-chunk").setup({})
-    --   end,
-    -- },
     {
       "shellRaining/hlchunk.nvim",
       event = { "BufReadPre", "BufNewFile" },
@@ -59,17 +49,6 @@ require("lazy").setup({
         virt_text_pos = "eol", --"inline",
       },
     },
-    -- {
-    --   "Chaitanyabsprip/fastaction.nvim",
-    --   ---@type FastActionConfig
-    --   opts = {},
-    -- },
-    -- Lazy
-    -- {
-    --   "dgagn/diagflow.nvim",
-    --   -- event = 'LspAttach', This is what I use personnally and it works great
-    --   opts = {},
-    -- },
   },
   defaults = {
     -- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.

@@ -9,4 +9,5 @@ return {
   { "tris203/precognition.nvim", enabled = false },
   -- temporarily disabled due to empty file issue
   -- { "nvim-navic", enabled = false },
+  { "hrsh7th/nvim-cmp", enabled = false },
 }

@@ -1,22 +1,11 @@
 return {
   {
-    "LazyVim/LazyVim",
-    opts = {
-      transparent_mode = true,
-      -- background = "#000000",
-      -- colorscheme = "nightfox",
-      -- colorscheme = "terafox",
-      -- colorscheme = "gruber-darker",
-      -- colorscheme = "tokyonight-moon",
-      -- colorscheme = "catppuccin-mocha",
-      -- colorscheme = "rose-pine-moon",
-      -- colorscheme = "gruvbox",
-      -- colorscheme = "cyberdream",
-      -- colorscheme = "nightfox",
-      colorscheme = "kanagawa-wave",
+    "xiantang/darcula-dark.nvim",
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
     },
   },
-  { "rebelot/kanagawa.nvim" },
+  { "rebelot/kanagawa.nvim", lazy = false, priority = 1000, opts = {} },
   {
     "folke/tokyonight.nvim",
     lazy = false,
@@ -57,5 +46,22 @@ return {
       })
       -- vim.cmd("colorscheme cyberdream") -- set the colorscheme
     end,
+  },
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      transparent_mode = true,
+      -- background = "#000000",
+      -- colorscheme = "nightfox",
+      -- colorscheme = "terafox",
+      -- colorscheme = "gruber-darker",
+      -- colorscheme = "tokyonight-moon",
+      -- colorscheme = "catppuccin-mocha",
+      -- colorscheme = "rose-pine-moon",
+      -- colorscheme = "gruvbox",
+      -- colorscheme = "cyberdream",
+      -- colorscheme = "nightfox",
+      colorscheme = "kanagawa-wave",
+    },
   },
 }
