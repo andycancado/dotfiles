@@ -22,7 +22,6 @@ require("lazy").setup({
     -- import/override with your plugins
     --
     { import = "plugins" },
-    -- { "sindrets/diffview.nvim" },
     {
       "shellRaining/hlchunk.nvim",
       event = { "BufReadPre", "BufNewFile" },
