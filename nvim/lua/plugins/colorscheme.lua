@@ -54,7 +54,7 @@ return {
       -- background = "#000000",
       -- colorscheme = "nightfox",
       -- colorscheme = "terafox",
-      colorscheme = "gruber-darker",
+      -- colorscheme = "gruber-darker",
       -- colorscheme = "tokyonight-moon",
       -- colorscheme = "catppuccin-mocha",
       -- colorscheme = "rose-pine-moon",
@@ -62,6 +62,7 @@ return {
       -- colorscheme = "cyberdream",
       -- colorscheme = "nightfox",
       -- colorscheme = "kanagawa-wave",
+      colorscheme = "darcula-dark",
     },
   },
 }

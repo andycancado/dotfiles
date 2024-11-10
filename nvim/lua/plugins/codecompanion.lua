@@ -110,6 +110,8 @@ return {
     "folke/which-key.nvim",
     optional = true,
     opts = {
+      ---@type false | "classic" | "modern" | "helix"
+      preset = vim.g.which_key_preset or "helix", -- default is "classic"
       spec = {
         { mapping_key_prefix, group = "AI Code Companion", mode = { "n", "v" } },
       },
