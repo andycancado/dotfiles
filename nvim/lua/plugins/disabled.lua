@@ -10,4 +10,5 @@ return {
   -- temporarily disabled due to empty file issue
   -- { "nvim-navic", enabled = false },
   { "hrsh7th/nvim-cmp", enabled = false },
+  {"giuxtaposition/blink-cmp-copilot", enabled= false}
 }
