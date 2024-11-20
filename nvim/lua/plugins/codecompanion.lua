@@ -135,6 +135,11 @@ local openai_fn = function()
       api_key = "OPENAI_API_KEY",
       model = "o1-mini-2024-09-12",
     },
+    schema = {
+      model = {
+        default = "o1-mini-2024-09-12",
+      },
+    },
   }
   return require("codecompanion.adapters").extend("openai", openai_config)
 end
@@ -162,6 +167,8 @@ return {
       "nvim-treesitter/nvim-treesitter",
       "ibhagwan/fzf-lua", -- For fzf provider, file or buffer picker
       "jellydn/spinner.nvim", -- Show loading spinner when request is started
+      "nvim-telescope/telescope.nvim",
+      { "MeanderingProgrammer/render-markdown.nvim", ft = { "markdown", "codecompanion" } }, -- Optional: For prettier markdown rendering
     },
     opts = {
       adapters = {
