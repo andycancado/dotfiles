@@ -1,6 +1,11 @@
 return {
   "saghen/blink.cmp",
   -- lazy = false, -- lazy loading handled internally
+  dependencies = {
+    {
+      "giuxtaposition/blink-cmp-copilot",
+    },
+  },
   event = { "LspAttach" },
   version = "v0.*",
   opts = {
@@ -8,7 +13,7 @@ return {
     -- 'super-tab' for mappings similar to vscode (tab to accept, arrow keys to navigate)
     -- see the "default configuration" section below for full documentation on how to define
     -- your own keymap. when defining your own, no keybinds will be assigned automatically.
-    keymap = { preset = 'enter' },
+    keymap = { preset = "enter" },
     -- keymap = {
     --   ["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
     --   ["<C-i>"] = { "show", "show_documentation", "hide_documentation" },
@@ -43,6 +48,17 @@ return {
 
     -- experimental signature help support
     trigger = { signature_help = { enabled = true } },
+    sources = {
+      providers = {
+        copilot = {
+          name = "copilot",
+          module = "blink-cmp-copilot",
+        },
+      },
+      completion = {
+        enabled_providers = { "lsp", "path", "snippets", "buffer", "copilot" },
+      },
+    },
   },
   windows = {
     autocomplete = {

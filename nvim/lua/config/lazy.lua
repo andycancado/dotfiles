@@ -22,21 +22,21 @@ require("lazy").setup({
     -- import/override with your plugins
     --
     { import = "plugins" },
-    {
-      "shellRaining/hlchunk.nvim",
-      event = { "BufReadPre", "BufNewFile" },
-      config = function()
-        require("hlchunk").setup({
-          chunk = {
-            enable = true,
-          },
-          -- indent = {
-          --   enable = true,
-          --   -- ...
-          -- },
-        })
-      end,
-    },
+    -- {
+    --   "shellRaining/hlchunk.nvim",
+    --   event = { "BufReadPre", "BufNewFile" },
+    --   config = function()
+    --     require("hlchunk").setup({
+    --       chunk = {
+    --         enable = true,
+    --       },
+    --       -- indent = {
+    --       --   enable = true,
+    --       --   -- ...
+    --       -- },
+    --     })
+    --   end,
+    -- },
     {
       "nvim-tree/nvim-web-devicons",
     },
