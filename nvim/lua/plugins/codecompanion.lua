@@ -144,6 +144,11 @@ local openai_fn = function()
   return require("codecompanion.adapters").extend("openai", openai_config)
 end
 
+local copilot_fn = function()
+  local copilot_config = {}
+  return require("codecompanion.adapters").extend("copilot", copilot_config)
+end
+
 return {
   {
     "folke/which-key.nvim",
@@ -175,10 +180,11 @@ return {
         anthropic = anthropic_fn,
         ollama = ollama_fn,
         openai = openai_fn,
+        copilot = copilot_fn,
       },
       strategies = {
         chat = {
-          adapter = "openai",
+          adapter = "copilot",
           roles = {
             llm = "  CodeCompanion",
             user = " " .. user:sub(1, 1):upper() .. user:sub(2),
