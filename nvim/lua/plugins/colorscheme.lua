@@ -21,15 +21,35 @@ return {
     },
   },
   { "EdenEast/nightfox.nvim" },
+  -- {
+  --   "blazkowolf/gruber-darker.nvim",
+  --   opts = {
+  --     bold = true,
+  --     invert = {
+  --       signs = false,
+  --       tabline = false,
+  --       visual = false,
+  --     },
+  --     italic = {
+  --       strings = true,
+  --       comments = true,
+  --       operators = false,
+  --       folds = true,
+  --     },
+  --     undercurl = true,
+  --     underline = true,
+  --   },
+  -- },
   {
-    "blazkowolf/gruber-darker.nvim",
-    opts = {
-      transparent = true,
-      styles = {
-        sidebars = "transparent",
-        floats = "transparent",
-      },
-    },
+    "thimc/gruber-darker.nvim",
+    config = function()
+      require("gruber-darker").setup({
+        transparent = false, -- removes the background
+        underline = true, -- disables underline fonts
+        bold = false, -- disables bold fonts
+      })
+      vim.cmd.colorscheme("gruber-darker")
+    end,
   },
   {
     "scottmckendry/cyberdream.nvim",
@@ -54,15 +74,15 @@ return {
       -- background = "#000000",
       -- colorscheme = "nightfox",
       -- colorscheme = "terafox",
-      -- colorscheme = "gruber-darker",
+      colorscheme = "gruber-darker",
       -- colorscheme = "tokyonight-moon",
-      -- colorscheme = "catppuccin-mocha",
+      -- colorscheme = "catppuccin",
       -- colorscheme = "rose-pine-moon",
       -- colorscheme = "gruvbox",
       -- colorscheme = "cyberdream",
       -- colorscheme = "nightfox",
       -- colorscheme = "kanagawa-wave",
-      colorscheme = "darcula-dark",
+      -- colorscheme = "darcula-dark",
     },
   },
 }
