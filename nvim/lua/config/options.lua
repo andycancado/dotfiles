@@ -34,7 +34,7 @@ vim.opt.splitbelow = true -- Put new windows below current
 vim.opt.splitright = true -- Put new windows right of current
 vim.opt.splitkeep = "cursor"
 vim.opt.cursorline = true
-vim.opt.cursorcolumn = true
+vim.opt.cursorcolumn = false
 
 vim.opt.clipboard = "unnamedplus"
 vim.opt.virtualedit = "block"
@@ -47,15 +47,9 @@ vim.cmd([[let &t_Ce = "\e[4:0m"]])
 
 -- Add asterisks in block comments
 vim.opt.formatoptions:append({ "r" })
---
-
---
--- if vim.fn.has("nvim-0.8") == 1 then
---   vim.opt.cmdheight = 0
--- end
 
 -- vim.o.listchars = "eol:↵,lead:·"
-vim.diagnostic.config({ virtual_text = false, signs = true })
+vim.diagnostic.config({ virtual_text = true, signs = true })
 
 -- Abbreviations for common typos
 vim.cmd("cnoreabbrev W! w!")

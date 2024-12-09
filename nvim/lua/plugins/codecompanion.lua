@@ -236,8 +236,8 @@ return {
             },
           },
         },
-        inline = { adapter = "openai" },
-        agent = { adapter = "openai" },
+        inline = { adapter = "copilot" },
+        agent = { adapter = "copilot" },
       },
       inline = {
         layout = "buffer", -- vertical|horizontal|buffer

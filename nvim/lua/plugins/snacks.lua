@@ -61,7 +61,7 @@ return {
       notifier = {
         enabled = true,
         --- Available style: "compact"|"fancy"|"minimal"
-        style = "minimal", -- similar to the default nvim-notify style
+        style = "fancy", -- similar to the default nvim-notify style
       },
       quickfile = { enabled = true },
       statuscolumn = {
