@@ -3,7 +3,7 @@ return {
   -- Manage text-based, markdown zettelkasten or wiki with telescope
   {
     "renerocksai/telekasten.nvim",
-    dependencies = { "nvim-telescope/telescope.nvim" },
+    -- dependencies = { "nvim-telescope/telescope.nvim" },
     cmd = { "Telekasten" },
 		-- stylua: ignore
 		keys = {
