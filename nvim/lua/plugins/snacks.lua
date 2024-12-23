@@ -63,6 +63,8 @@ return {
         --- Available style: "compact"|"fancy"|"minimal"
         style = "fancy", -- similar to the default nvim-notify style
       },
+      scroll = { enabled = false },
+
       quickfile = { enabled = true },
       statuscolumn = {
         enabled = true,
