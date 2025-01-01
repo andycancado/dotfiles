@@ -107,7 +107,7 @@ Identify any issues related to:
 
 local anthropic_fn = function()
   local anthropic_config = {
-    env = { api_key = "cmd:op read op://Personal/Anthropic/tokens/neovim --no-newline" },
+    env = { api_key = "ANTHROPIC_API_KEY" },
   }
   return require("codecompanion.adapters").extend("anthropic", anthropic_config)
 end
@@ -116,8 +116,7 @@ local ollama_fn = function()
   return require("codecompanion.adapters").extend("ollama", {
     schema = {
       model = {
-        default = "llama3.1:8b",
-        -- default = "codellama:7b",
+        default = "qwen2.5-coder:7b",
       },
       num_ctx = {
         default = 16384,
@@ -184,7 +183,7 @@ return {
       },
       strategies = {
         chat = {
-          adapter = "copilot",
+          adapter = "anthropic",
           roles = {
             llm = "  CodeCompanion",
             user = " " .. user:sub(1, 1):upper() .. user:sub(2),
@@ -236,8 +235,8 @@ return {
             },
           },
         },
-        inline = { adapter = "copilot" },
-        agent = { adapter = "copilot" },
+        inline = { adapter = "anthropic" },
+        agent = { adapter = "anthropic" },
       },
       inline = {
         layout = "buffer", -- vertical|horizontal|buffer
