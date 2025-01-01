@@ -1,12 +1,18 @@
 font-family = BlexMono Nerd Font
 #font-family = Iosevka Nerd Font
 # font-family = SFMono Nerd Font
-font-size =  14
-theme = GruvboxDarkHard
-shell-integration-features = no-cursor,sudo,no-title
+font-size =  12
+
+window-theme = ghostty
+
+# theme = GruvboxDarkHard
 cursor-style = block
 #adjust-cell-height = 35%
 background-opacity = 0.96
+shell-integration-features = cursor,sudo,no-title
+window-decoration = false
+shell-integration = zsh
+
 
 mouse-hide-while-typing = true
 mouse-scroll-multiplier = 2
