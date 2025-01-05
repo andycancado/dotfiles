@@ -1,31 +1,52 @@
 return {
-
-  {
-    "neovim/nvim-lspconfig",
-    dependencies = { "saghen/blink.cmp" },
-    opts = {
-      inlay_hints = { enabled = false },
-      setup = {
-        rust_analyzer = function()
-          return true
-        end,
-      },
-      config = function(_, opts)
-        local lspconfig = require("lspconfig")
-        for server, config in pairs(opts.servers) do
-          config.capabilities = require("blink.cmp").get_lsp_capabilities(config.capabilities)
-          lspconfig[server].setup(config)
-        end
+  "neovim/nvim-lspconfig",
+  dependencies = { "saghen/blink.cmp" },
+  opts = {
+    inlay_hints = { enabled = false },
+    setup = {
+      rust_analyzer = function()
+        return true
       end,
-      servers = {
-        pyright = {
-          mason = false,
-          autostart = false,
+    },
+    config = function(_, opts)
+      local lspconfig = require("lspconfig")
+      for server, config in pairs(opts.servers) do
+        config.capabilities = require("blink.cmp").get_lsp_capabilities(config.capabilities)
+        lspconfig[server].setup(config)
+      end
+
+      -- lspconfig["ruff"].setup()
+    end,
+    servers = {
+      -- pyright = {
+      --   mason = true,
+      --   autostart = true,
+      -- },
+      ruff = {},
+      gopls = {
+        mason = true,
+        autostart = true,
+        settings = {
+          gopls = {
+            staticcheck = true,
+            gofumpt = true,
+            usePlaceholders = true,
+            completeUnimported = true,
+          },
         },
       },
+      -- harper_ls = {
+      --   settings = {
+      --     ["harper-ls"] = {
+      --       diagnosticSeverity = "information", -- Can also be "information", "warning", or "error"
+      --
+      --     },
+      --   },
+      -- },
     },
   },
 }
+
 -- return {
 --   -- change nvim-lspconfig options
 --   "neovim/nvim-lspconfig",
