@@ -7,6 +7,7 @@ window-theme = ghostty
 
 # theme = GruvboxDarkHard
 cursor-style = block
+cursor-invert-fg-bg = true
 #adjust-cell-height = 35%
 background-opacity = 0.96
 shell-integration-features = cursor,sudo,no-title
