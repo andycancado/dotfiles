@@ -9,4 +9,5 @@ return {
   -- { "hrsh7th/nvim-cmp", enabled = true },
   { "saghen/blink.cmp", enabled = true },
   { "giuxtaposition/blink-cmp-copilot", enabled = true },
+  { "olimorris/codecompanion.nvim", enabled = false },
 }

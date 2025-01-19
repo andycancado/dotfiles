@@ -2,8 +2,8 @@ return {
   "stevearc/oil.nvim",
   lazy = false,
   dependencies = { "nvim-tree/nvim-web-devicons" },
-  -- keys = { { "-", "<cmd>Oil --float<cr>", desc = "Start Oil" } },
-  keys = { { "-", "<cmd>Oil<cr>", desc = "Start Oil" } },
+  keys = { { "-", "<cmd>Oil --float<cr>", desc = "Start Oil" } },
+  -- keys = { { "-", "<cmd>Oil<cr>", desc = "Start Oil" } },
   opts = {
     default_file_explorer = true,
     columns = {
