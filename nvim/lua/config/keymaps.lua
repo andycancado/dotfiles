@@ -85,6 +85,25 @@ vim.keymap.set("n", "<leader>h", function()
   vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
 end, { desc = "Toggle Inlay Hint" })
 
+-- disable diagnostics
+vim.g["diagnostics_active"] = true
+function Toggle_diagnostics()
+  if vim.g.diagnostics_active then
+    vim.g.diagnostics_active = false
+    vim.diagnostic.enable(false)
+  else
+    vim.g.diagnostics_active = true
+    vim.diagnostic.enable()
+  end
+end
+
+vim.keymap.set(
+  "n",
+  "<leader>xd",
+  Toggle_diagnostics,
+  { noremap = true, silent = true, desc = "Toggle vim diagnostics" }
+)
+
 -- local function visual_cursors_with_delay()
 --   -- Execute the vm-visual-cursors command.
 --   vim.cmd('silent! execute "normal! \\<Plug>(VM-Visual-Cursors)"')

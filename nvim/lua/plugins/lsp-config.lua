@@ -18,11 +18,15 @@ return {
       -- lspconfig["ruff"].setup()
     end,
     servers = {
-      -- pyright = {
-      --   mason = true,
-      --   autostart = true,
-      -- },
-      ruff = {},
+      pyright = {
+        mason = false,
+        autostart = false,
+      },
+      basedpyright = {},
+       ruff = {
+          mason = false,
+          enabled = false,
+        },
       gopls = {
         mason = true,
         autostart = true,
