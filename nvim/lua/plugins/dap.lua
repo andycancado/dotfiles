@@ -21,7 +21,7 @@ return {
     { "<m-l>", "<Cmd>lua require('dap').run_last()<CR>", desc = "Debug Run Last" },
   },
   config = function()
-    local path = require("mason-registry").get_package("debugpy"):get_install_path()
-    require("dap-python").setup(path .. "/venv/bin/python")
+    -- local path = require("mason-registry").get_package("debugpy"):get_install_path()
+    -- require("dap-python").setup(path .. "/venv/bin/python")
   end,
 }

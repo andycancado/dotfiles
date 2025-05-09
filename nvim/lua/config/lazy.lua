@@ -21,6 +21,7 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.lang.json" },
     -- import/override with your plugins
     --
+
     { import = "plugins" },
     -- {
     --   "shellRaining/hlchunk.nvim",
@@ -45,7 +46,7 @@ require("lazy").setup({
       event = "LspAttach",
       config = true,
       opts = {
-        virt_text_pos = "eol", --"inline",
+        virt_text_pos = "inline", -- "inline"
       },
     },
   },

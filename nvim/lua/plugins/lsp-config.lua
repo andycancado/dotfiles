@@ -22,11 +22,37 @@ return {
         mason = false,
         autostart = false,
       },
-      basedpyright = {},
-       ruff = {
-          mason = false,
-          enabled = false,
+      basedpyright = {
+        settings = {
+          basedpyright = {
+            analysis = {
+              autoSearchPaths = true,
+              diagnosticMode = "openFilesOnly",
+              useLibraryCodeForTypes = true,
+              typeCheckingMode = "all",
+              diagnosticSeverityOverrides = {
+                reportAny = false,
+                reportMissingTypeArgument = false,
+                reportMissingTypeStubs = false,
+                reportUnknownArgumentType = false,
+                reportUnknownMemberType = false,
+                reportUnknownParameterType = false,
+                reportUnknownVariableType = false,
+                reportUnusedCallResult = false,
+              },
+            },
+            -- python = {
+            --   venvPath = "/path/to/venv",
+            --   venv = "venv",
+            -- },
+          },
         },
+      },
+      -- basedpyright = {},
+      ruff = {
+        mason = false,
+        enabled = false,
+      },
       gopls = {
         mason = true,
         autostart = true,
@@ -50,53 +76,3 @@ return {
     },
   },
 }
-
--- return {
---   -- change nvim-lspconfig options
---   "neovim/nvim-lspconfig",
---   opts = {
---     servers = {
---       -- https://github.com/microsoft/pyright/discussions/5852#discussioncomment-6874502
---       pyright = {
---         capabilities = {
---           textDocument = {
---             publishDiagnostics = {
---               tagSupport = {
---                 valueSet = { 2 },
---               },
---             },
---           },
---         },
---       },
---       ruff_lsp = {},
---     },
---   },
--- }
--- return {
---   "neovim/nvim-lspconfig",
---   dependencies = {
---     "hrsh7th/nvim-cmp",
---   },
---   config = function()
---     -- -- Chaos
---     -- -- https://www.reddit.com/r/neovim/comments/18teetv/one_day_you_will_wake_up_and_choose_the_chaos
---     -- -- https://github.com/neovim/nvim-lspconfig/wiki/UI-Customization
---     -- -- https://neovim.io/doc/user/diagnostic.html#diagnostic-highlights
---     -- local signs = {
---     --   Error = "🤬",
---     --   Warn = "😤",
---     --   Info = "🤔",
---     --   Hint = "🤯",
---     -- }
---     -- for type, icon in pairs(signs) do
---     --   local hl = "DiagnosticSign" .. type
---     --   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
---     -- end
---     --
---     -- https://neovim.io/doc/user/diagnostic.html#diagnostic-api
---     vim.diagnostic.config({
---       underline = true,
---       virtual_text = true,
---     })
---   end,
--- }

@@ -49,7 +49,6 @@ vim.cmd([[let &t_Ce = "\e[4:0m"]])
 vim.opt.formatoptions:append({ "r" })
 
 -- vim.o.listchars = "eol:↵,lead:·"
-vim.diagnostic.config({ virtual_text = true, signs = true })
 
 -- Abbreviations for common typos
 vim.cmd("cnoreabbrev W! w!")
@@ -63,3 +62,14 @@ vim.cmd("cnoreabbrev W w")
 vim.cmd("cnoreabbrev Q q")
 
 vim.g.lazyvim_python_lsp = "basedpyright"
+vim.g.lazyvim_blink_main = true
+-- vim.diagnostic.config({
+--   -- Use the default configuration
+--   virtual_lines = true,
+--
+--   -- Alternatively, customize specific options
+--   -- virtual_lines = {
+--   --  -- Only show virtual line diagnostics for the current cursor line
+--   --  current_line = true,
+--   -- },
+-- })

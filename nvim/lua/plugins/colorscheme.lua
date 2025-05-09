@@ -12,7 +12,6 @@ return {
     priority = 1000,
     opts = {},
   },
-  { "ficcdaf/ashen.nvim" },
   -- {
   --   "blazkowolf/gruber-darker.nvim",
   --   opts = {
@@ -55,27 +54,14 @@ return {
       -- vim.cmd.colorscheme("gruber-darker")
     end,
   },
-  {
-    "wtfox/jellybeans.nvim",
-    priority = 1000,
-    -- config = function()
-    --   require("jellybeans").setup()
-    --   -- vim.cmd.colorscheme("jellybeans")
-    -- end,
-  },
-  {
-    "dgox16/oldworld.nvim",
-    lazy = false,
-    priority = 1001,
-  },
-  {
-    "rjshkhr/shadow.nvim",
-    priority = 1001,
-    config = function()
-      vim.opt.termguicolors = true
-      vim.cmd.colorscheme("shadow")
-    end,
-  },
+  -- {
+  --   "rjshkhr/shadow.nvim",
+  --   priority = 1001,
+  --   config = function()
+  --     vim.opt.termguicolors = true
+  --     -- vim.cmd.colorscheme("shadow")
+  --   end,
+  -- },
   {
     "alexxGmZ/e-ink.nvim",
     priority = 1000,
@@ -92,6 +78,8 @@ return {
       -- :set background=light
     end,
   },
+  { "ayu-theme/ayu-vim" },
+  { "webhooked/kanso.nvim"},
   {
     "LazyVim/LazyVim",
     opts = {
@@ -100,10 +88,9 @@ return {
       -- colorscheme = "gruber-darker",
       -- colorscheme = "tokyonight",
       -- colorscheme = "mellifluous",
-      -- colorscheme = "ashen",
-      colorscheme = "shadow",
+      -- colorscheme = "ayu",
+      colorscheme = "kanso",
       -- colorscheme = "kanagawa-wave",
-      -- colorscheme = "oldworld",
     },
   },
 }

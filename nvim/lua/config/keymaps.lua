@@ -49,7 +49,12 @@ vim.keymap.set("x", "@", function()
   return ":norm @" .. vim.fn.getcharstr() .. "<cr>"
 end, { expr = true })
 -- --------------------------------------------------
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+-- vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+
+-- O
+vim.keymap.set("n", "<leader>rw", 'diw"0P')
+
+
 
 -- don't ask
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -67,7 +72,8 @@ vim.keymap.set("n", "]g", vim.diagnostic.goto_next)
 vim.keymap.set("n", "[g", vim.diagnostic.goto_prev)
 
 -- Copilot toggle functionality
-local copilot_on = vim.g.copilot_enabled == 1
+-- local copilot_on = vim.g.copilot_enabled == 1
+local copilot_on = true
 vim.api.nvim_create_user_command("CopilotToggle", function()
   if copilot_on then
     vim.cmd("Copilot disable")
@@ -103,6 +109,15 @@ vim.keymap.set(
   Toggle_diagnostics,
   { noremap = true, silent = true, desc = "Toggle vim diagnostics" }
 )
+local isLspDiagnosticsVisible = true
+vim.keymap.set("n", "<leader>cx", function()
+  isLspDiagnosticsVisible = not isLspDiagnosticsVisible
+  vim.diagnostic.config({
+    virtual_text = isLspDiagnosticsVisible,
+    underline = isLspDiagnosticsVisible,
+  })
+end, { desc = "Toggle vim diagnostics text" })
+
 
 -- local function visual_cursors_with_delay()
 --   -- Execute the vm-visual-cursors command.
