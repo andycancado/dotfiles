@@ -41,6 +41,19 @@ require("lazy").setup({
     {
       "nvim-tree/nvim-web-devicons",
     },
+    -- {
+    --   "mistweaverco/kulala.nvim",
+    --   keys = {
+    --     { "<leader>Rs", desc = "Send request" },
+    --     { "<leader>Ra", desc = "Send all requests" },
+    --     { "<leader>Rb", desc = "Open scratchpad" },
+    --   },
+    --   ft = { "http", "rest" },
+    --   opts = {
+    --     -- your configuration comes here
+    --     global_keymaps = false,
+    --   },
+    -- },
     {
       "felpafel/inlay-hint.nvim",
       event = "LspAttach",
@@ -49,6 +62,9 @@ require("lazy").setup({
         virt_text_pos = "inline", -- "inline"
       },
     },
+    -- {
+    --   "reachingforthejack/cursortab.nvim"
+    -- }
   },
   defaults = {
     -- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.
@@ -76,3 +92,21 @@ require("lazy").setup({
     },
   },
 })
+
+-- require("codecompanion").setup({
+--   strategies = {
+--     chat = {
+--       tools = {
+--         ["mcp"] = {
+--           callback = require("mcphub.extensions.codecompanion"),
+--           description = "Call tools and resources from the MCP Servers",
+--           opts = {
+--             show_result_in_chat = true, -- Show the mcp tool result in the chat buffer
+--             make_slash_commands = true,
+--             make_vars = true, -- make chat #variables from MCP server resources
+--           },
+--         },
+--       },
+--     },
+--   },
+-- })
