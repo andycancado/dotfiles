@@ -65,6 +65,12 @@ require("lazy").setup({
     -- {
     --   "reachingforthejack/cursortab.nvim"
     -- }
+    {
+      "Davidyz/VectorCode",
+      version = "*", -- optional, depending on whether you're on nightly or release
+      build = "pipx upgrade vectorcode", -- optional but recommended if you set `version = "*"`
+      dependencies = { "nvim-lua/plenary.nvim" },
+    },
   },
   defaults = {
     -- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.

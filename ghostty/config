@@ -1,13 +1,14 @@
 font-family = BlexMono Nerd Font
+# font-family = CodeNewRoman Nerd Font
 #font-family = Iosevka Nerd Font
 # font-family = SFMono Nerd Font
-font-size =  12
+font-size =  14
 
 window-theme = ghostty
 bold-is-bright = true
 
-# theme = GruvboxDarkHard
-cursor-style = block
+theme = nord
+# cursor-style = block
 cursor-invert-fg-bg = true
 #adjust-cell-height = 35%
 background-opacity = 0.96
@@ -24,7 +25,7 @@ window-padding-balance = true
 window-save-state = always
 macos-titlebar-style=transparent
 window-colorspace = "display-p3"
-background = 1C2021
+background =  181818
 # foreground = d4be98
 
 # keybindings

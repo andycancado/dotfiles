@@ -79,7 +79,23 @@ return {
     end,
   },
   { "ayu-theme/ayu-vim" },
-  { "webhooked/kanso.nvim"},
+  {
+    "webhooked/kanso.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
+    config = function()
+      vim.cmd.colorscheme("kanso-ink")
+    end,
+  },
+  {
+    "shaunsingh/nord.nvim",
+    lazy = true,
+    options = {
+      bold = false,
+    },
+  },
+
   {
     "LazyVim/LazyVim",
     opts = {

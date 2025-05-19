@@ -10,7 +10,7 @@
 -- vim.opt.number = true
 --
 vim.opt.shell = "/bin/zsh"
-vim.opt.relativenumber = false
+vim.opt.relativenumber = true
 vim.opt.title = true
 vim.opt.autoindent = true
 vim.opt.smartindent = true
@@ -63,6 +63,10 @@ vim.cmd("cnoreabbrev Q q")
 
 vim.g.lazyvim_python_lsp = "basedpyright"
 vim.g.lazyvim_blink_main = true
+--
+vim.opt.startofline = true -- Move cursor to the first non-blank character.
+
+--
 -- vim.diagnostic.config({
 --   -- Use the default configuration
 --   virtual_lines = true,

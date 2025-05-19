@@ -160,6 +160,25 @@ local copilot_fn = function()
   return require("codecompanion.adapters").extend("copilot", copilot_config)
 end
 
+local openrouter_fn = function()
+  -- local default_model = "google/gemini-2.0-flash-001"
+  -- local current_model = default_model
+  local openrouter_config = {
+    env = {
+      url = "https://openrouter.ai/api",
+      api_key = "OPENROUTER_API_KEY",
+      chat_url = "/v1/chat/completions",
+      model = "nousresearch/deephermes-3-mistral-24b-preview:free", --current_model,
+    },
+    schema = {
+      model = {
+        default = "nousresearch/deephermes-3-mistral-24b-preview:free", --current_model,
+      },
+    },
+  }
+  return require("codecompanion.adapters").extend("openai_compatible", openrouter_config)
+end
+
 return {
   {
     "folke/which-key.nvim",
@@ -184,13 +203,14 @@ return {
       "ibhagwan/fzf-lua", -- For fzf provider, file or buffer picker
       "jellydn/spinner.nvim", -- Show loading spinner when request is started
       "nvim-telescope/telescope.nvim",
+      "ravitemer/codecompanion-history.nvim",
       "j-hui/fidget.nvim",
-      -- {
-      --   "Davidyz/VectorCode", -- Index and search code in your repositories
-      --   version = "*",
-      --   build = "pipx upgrade vectorcode",
-      --   dependencies = { "nvim-lua/plenary.nvim" },
-      -- },
+      {
+        "Davidyz/VectorCode", -- Index and search code in your repositories
+        version = "*",
+        build = "pipx upgrade vectorcode",
+        dependencies = { "nvim-lua/plenary.nvim" },
+      },
       {
         "ravitemer/mcphub.nvim", -- Manage MCP servers
         cmd = "MCPHub",
@@ -201,6 +221,31 @@ return {
     },
     opts = {
       extensions = {
+        history = {
+          enabled = true,
+          opts = {
+            -- Keymap to open history from chat buffer (default: gh)
+            keymap = "gh",
+            -- Keymap to save the current chat manually (when auto_save is disabled)
+            save_chat_keymap = "sc",
+            -- Save all chats by default (disable to save only manually using 'sc')
+            auto_save = true,
+            -- Number of days after which chats are automatically deleted (0 to disable)
+            expiration_days = 0,
+            -- Picker interface ("telescope" or "snacks" or "fzf-lua" or "default")
+            picker = "telescope",
+            -- Automatically generate titles for new chats
+            auto_generate_title = true,
+            ---On exiting and entering neovim, loads the last chat on opening chat
+            continue_last_chat = false,
+            ---When chat is cleared with `gx` delete the chat from history
+            delete_on_clearing_chat = false,
+            ---Directory path to save the chats
+            dir_to_save = vim.fn.stdpath("data") .. "/codecompanion-history",
+            ---Enable detailed logging for history extension
+            enable_logging = false,
+          },
+        },
         mcphub = {
           callback = "mcphub.extensions.codecompanion",
           opts = {
@@ -209,11 +254,11 @@ return {
             show_result_in_chat = true,
           },
         },
-        -- vectorcode = {
-        --   opts = {
-        --     add_tool = true,
-        --   },
-        -- },
+        vectorcode = {
+          opts = {
+            add_tool = true,
+          },
+        },
       },
       adapters = {
         anthropic = anthropic_fn,
@@ -221,6 +266,7 @@ return {
         openai = openai_fn,
         copilot = copilot_fn,
         gemini = gemini_fn,
+        openrouter = openrouter_fn,
       },
       strategies = {
         chat = {
@@ -235,25 +281,25 @@ return {
               auto_submit_errors = false,
             },
           },
-          slash_commands = {
-            ["buffer"] = {
-              callback = "helpers.slash_commands.buffer",
-              description = "Insert open buffers",
-              opts = {
-                contains_code = true,
-                provider = "fzf_lua", -- default|telescope|mini_pick|fzf_lua
-              },
-            },
-            ["file"] = {
-              callback = "helpers.slash_commands.file",
-              description = "Insert a file",
-              opts = {
-                contains_code = true,
-                max_lines = 1000,
-                provider = "fzf_lua", -- telescope|mini_pick|fzf_lua
-              },
-            },
-          },
+          -- slash_commands = {
+          --   ["buffer"] = {
+          --     callback = "helpers.slash_commands.buffer",
+          --     description = "Insert open buffers",
+          --     opts = {
+          --       contains_code = true,
+          --       provider = "fzf_lua", -- default|telescope|mini_pick|fzf_lua
+          --     },
+          --   },
+          --   ["file"] = {
+          --     callback = "helpers.slash_commands.file",
+          --     description = "Insert a file",
+          --     opts = {
+          --       contains_code = true,
+          --       max_lines = 1000,
+          --       provider = "fzf_lua", -- telescope|mini_pick|fzf_lua
+          --     },
+          --   },
+          -- },
           keymaps = {
             send = {
               modes = {
@@ -642,6 +688,7 @@ return {
           end
         end,
         desc = "Code Companion - Quick chat",
+        mode = { "n", "v" },
       },
     },
   },

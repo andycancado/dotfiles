@@ -59,7 +59,6 @@ return {
     opts = {
       image = {},
       explorer = {},
-
       bigfile = { enabled = true },
       notifier = {
         enabled = true,
@@ -77,7 +76,7 @@ return {
 
       quickfile = { enabled = true },
       statuscolumn = {
-        enabled = true,
+        enabled = false,
       },
       words = { enabled = true },
       styles = {
