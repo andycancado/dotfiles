@@ -24,16 +24,26 @@ return {
         "snippet_forward",
         "fallback",
       },
+      -- show with a list of providers
+      ["<C-x>"] = {
+        function(cmp)
+          cmp.show({ providers = { "snippets", "lsp" } })
+        end,
+      },
     },
     appearance = {
       use_nvim_cmp_as_default = false,
       nerd_font_variant = "mono",
     },
     signature = {
-      enabled = false,
+      enabled = true,
     },
     completion = {
-      ghost_text = { enabled = true },
+      ghost_text = {
+        enabled = true,
+        -- show_with_menu = false, -- only show when menu is closed
+      },
+
       menu = {
         auto_show = true,
         border = "rounded",

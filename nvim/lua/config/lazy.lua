@@ -41,19 +41,6 @@ require("lazy").setup({
     {
       "nvim-tree/nvim-web-devicons",
     },
-    -- {
-    --   "mistweaverco/kulala.nvim",
-    --   keys = {
-    --     { "<leader>Rs", desc = "Send request" },
-    --     { "<leader>Ra", desc = "Send all requests" },
-    --     { "<leader>Rb", desc = "Open scratchpad" },
-    --   },
-    --   ft = { "http", "rest" },
-    --   opts = {
-    --     -- your configuration comes here
-    --     global_keymaps = false,
-    --   },
-    -- },
     {
       "felpafel/inlay-hint.nvim",
       event = "LspAttach",
@@ -68,8 +55,23 @@ require("lazy").setup({
     {
       "Davidyz/VectorCode",
       version = "*", -- optional, depending on whether you're on nightly or release
-      build = "pipx upgrade vectorcode", -- optional but recommended if you set `version = "*"`
+      build = "uv tool upgrade vectorcode",
+      -- build = "pipx upgrade vectorcode", -- optional but recommended if you set `version = "*"`
       dependencies = { "nvim-lua/plenary.nvim" },
+    },
+    {
+      "A7Lavinraj/fyler.nvim",
+      dependencies = { "echasnovski/mini.icons" },
+      opts = {
+        views = {
+          file_tree = {
+            width = 0.2,
+            height = 0.8,
+            kind = "split:left",
+            border = "single",
+          },
+        },
+      },
     },
   },
   defaults = {

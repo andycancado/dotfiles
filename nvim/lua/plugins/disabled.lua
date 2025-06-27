@@ -11,5 +11,6 @@ return {
   { "saghen/blink.cmp", enabled = true },
   { "giuxtaposition/blink-cmp-copilot", enabled = true },
   -- { "olimorris/codecompanion.nvim", enabled = true },
+  { "copilotlsp-nvim/copilot-lsp", enabled = true },
   { "yetone/avante.nvim", enabled = false },
 }
