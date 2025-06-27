@@ -55,6 +55,11 @@ end, { expr = true })
 vim.keymap.set("n", "<leader>rw", 'diw"0P')
 
 
+vim.keymap.set("n", "gv", function()
+  vim.lsp.buf.definition({ vsplit = true })
+end, { noremap = true, silent = true })
+
+
 
 -- don't ask
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -74,17 +79,19 @@ vim.keymap.set("n", "[g", vim.diagnostic.goto_prev)
 -- Copilot toggle functionality
 -- local copilot_on = vim.g.copilot_enabled == 1
 local copilot_on = true
-vim.api.nvim_create_user_command("CopilotToggle", function()
+vim.api.nvim_create_user_command("AIToggle", function()
   if copilot_on then
     vim.cmd("Copilot disable")
+    vim.cmd("LspStop copilot_ls")
     print("Copilot OFF")
   else
     vim.cmd("Copilot enable")
+    vim.cmd("LspStart copilot_ls")
     print("Copilot ON")
   end
   copilot_on = not copilot_on
 end, { nargs = 0 })
-vim.keymap.set("n", "<leader>ch", ":CopilotToggle<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>ch", ":AIToggle<CR>", { noremap = true, silent = true })
 
 -- toggle inlays
 vim.keymap.set("n", "<leader>h", function()
