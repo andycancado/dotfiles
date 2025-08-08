@@ -63,8 +63,14 @@ vim.cmd("cnoreabbrev Q q")
 
 vim.g.lazyvim_python_lsp = "basedpyright"
 vim.g.lazyvim_blink_main = true
+
+-- folding
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.opt.foldlevel = 99
 --
 vim.opt.startofline = true -- Move cursor to the first non-blank character.
+-- vim.o.winborder = "single"
 
 --
 -- vim.diagnostic.config({

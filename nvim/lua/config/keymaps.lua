@@ -28,6 +28,7 @@ vim.api.nvim_set_keymap("n", "<C-x>", ":bd<CR>", { noremap = true, silent = true
 -- -- mini file
 -- vim.keymap.set("n", "<space>e", "<cmd>lua MiniFiles.open()<cr>")
 
+vim.keymap.set("n", "<space>e", "<cmd>Fyler<cr>")
 -- Indent while remaining in visual mode.
 vim.keymap.set("v", "<", "<gv")
 vim.keymap.set("v", ">", ">gv")

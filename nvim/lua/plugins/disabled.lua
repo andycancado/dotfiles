@@ -13,4 +13,7 @@ return {
   -- { "olimorris/codecompanion.nvim", enabled = true },
   { "copilotlsp-nvim/copilot-lsp", enabled = true },
   { "yetone/avante.nvim", enabled = false },
+  { "sphamba/smear-cursor.nvim", enabled = not vim.fn.has("mac") },
+  { "linux-cultist/venv-selector.nvim", enabled = false },
+  { "nvim-lualine/lualine.nvim", enabled = true }
 }
