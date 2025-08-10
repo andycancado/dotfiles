@@ -33,7 +33,8 @@ return {
     "LazyVim/LazyVim",
     opts = {
       transparent_mode = false,
-      colorscheme = "base16-gruber",
+      -- colorscheme = "base16-gruber",
+      colorscheme = "base16-stella",
     },
   },
 }

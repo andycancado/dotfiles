@@ -1,0 +1,19 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "provider": {
+    "openrouter": {
+      "models": {
+        "google/gemini-2.5-flash": {
+          "name": "gemini-2.5-flash",
+          "limit": {
+            "context": 10000,
+            "output": 5000
+          }
+        }
+      }
+    }
+  },
+  "permission": {
+    "edit": "ask"
+  }
+}
