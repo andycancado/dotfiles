@@ -76,6 +76,7 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 
 vim.keymap.set("n", "]g", vim.diagnostic.goto_next)
 vim.keymap.set("n", "[g", vim.diagnostic.goto_prev)
+vim.api.nvim_set_keymap("n", "<C-l>", "<C-i>", { noremap = true, silent = true })
 
 -- Copilot toggle functionality
 -- local copilot_on = vim.g.copilot_enabled == 1

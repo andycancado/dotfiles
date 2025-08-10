@@ -15,5 +15,7 @@ return {
   { "yetone/avante.nvim", enabled = false },
   { "sphamba/smear-cursor.nvim", enabled = not vim.fn.has("mac") },
   { "linux-cultist/venv-selector.nvim", enabled = false },
-  { "nvim-lualine/lualine.nvim", enabled = true }
+  { "nvim-lualine/lualine.nvim", enabled = true },
+  { "ggandor/leap.nvim", enabled = false },
+  { "folke/flash.nvim", enabled = false },
 }
