@@ -14,7 +14,7 @@ cursor-invert-fg-bg = true
 background-opacity = 0.96
 shell-integration-features = cursor,sudo,no-title
 window-decoration = false
-shell-integration = zsh
+shell-integration = fish
 
 
 mouse-hide-while-typing = true
