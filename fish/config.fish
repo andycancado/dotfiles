@@ -14,7 +14,6 @@ source ~/.alias
 # Path modifications
 set -gx PATH $PATH "$HOME/.pub-cache/bin"
 set -gx PATH $PATH "$HOME/fvm/default/bin"
-set -gx PATH $PATH "$HOME/.modular/bin"
 set -gx PATH $PATH "/opt/nvim-linux-x86_64/bin"
 
 
@@ -24,23 +23,37 @@ set -gx PATH $PATH "/opt/nvim-linux-x86_64/bin"
 # Zoxide
 zoxide init fish | source
 
+# ASDF configuration code
+if test -z $ASDF_DATA_DIR
+    set _asdf_shims "$HOME/.asdf/shims"
+else
+    set _asdf_shims "$ASDF_DATA_DIR/shims"
+end
 
-# Go environment variables
-set -gx GOPATH (asdf where golang)
-set -gx GOROOT (asdf where golang)/go
-set -gx GOBIN (string length --quiet $GOBIN; or echo (go env GOPATH)/bin)
-set -gx PATH $PATH "$GOPATH/bin"
-source ~/.env
-source "$HOME/.sdkman/bin/sdkman-init.sh"
+# Do not use fish_add_path (added in Fish 3.2) because it
+# potentially changes the order of items in PATH
+if not contains $_asdf_shims $PATH
+    set -gx --prepend PATH $_asdf_shims
+end
+set --erase _asdf_shims
 
-set -gx PATH "$ASDF_DATA_DIR:-$HOME/.asdf}/shims" $PATH
-set -gx PATH "/opt/nvim/bin" $PATH
+# Go enNVIM_APPNAME=nvim-lazyvim nvimvironment variables
+# set -gx GOPATH (asdf where golang)
+# set -gx GOROOT (asdf where golang)/go
+# set -gx GOBIN (string length --quiet $GOBIN)
+# set -gx PATH $PATH "$GOPATH/bin"
+# source ~/.env
+# # source "$HOME/.sdkman/bin/sdkman-init.sh"
+#
+# set -gx PATH "$ASDF_DATA_DIR:-$HOME/.asdf}/shims" $PATH
+# set -gx PATH "/opt/nvim/bin" $PATH
 
 # fzf (assuming fzf is installed and its fish keybindings are managed separately or via oh-my-fish)
 if test -f ~/.fzf.fish
     source ~/.fzf.fish
   end
-
+# Set up fzf key bindings
+fzf --fish | source
 
 if test "$TERM_PROGRAM" = "ghostty"
     set -gx TERM xterm-256color
@@ -53,18 +66,20 @@ abbr -a v nvim
 abbr -a m make
 abbr -a o xdg-open
 abbr -a g git
+abbr -a yz yazi
 abbr -a vimdiff 'nvim -d'
 
-if status --is-interactive
-	switch $TERM
-		case 'linux'
-			:
-		case '*'
-			if ! set -q TMUX
-				exec tmux set-option -g default-shell (which fish) ';' new-session
-			end
-	end
-end
+
+# if status --is-interactive
+# 	switch $TERM
+# 		case 'linux'
+# 			:
+# 		case '*'
+# 			if ! set -q TMUX
+# 				exec tmux set-option -g default-shell (which fish) ';' new-session
+# 			end
+# 	end
+# end
 
 
 if command -v eza > /dev/null

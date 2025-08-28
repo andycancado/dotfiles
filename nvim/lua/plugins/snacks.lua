@@ -57,6 +57,9 @@ return {
     lazy = false,
     ---@type snacks.Config
     opts = {
+      indent = {
+        enabled = false,
+      },
       image = {},
       explorer = {},
       bigfile = { enabled = true },

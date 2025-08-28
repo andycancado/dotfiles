@@ -70,7 +70,7 @@ vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.foldlevel = 99
 --
 vim.opt.startofline = true -- Move cursor to the first non-blank character.
--- vim.o.winborder = "single"
+vim.o.winborder = "rounded"
 
 --
 -- vim.diagnostic.config({
