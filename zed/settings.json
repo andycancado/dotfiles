@@ -1,0 +1,59 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run the `open default settings` command
+// from the command palette or from `Zed` application menu.
+{
+  "languages": {
+    "Python": {
+      "show_edit_predictions": false
+    }
+  },
+  "ssh_connections": [
+    {
+      "host": "3.250.130.53",
+      "projects": []
+    },
+    {
+      "host": "13.61.150.136",
+      "username": "ubuntu",
+      "args": [
+        "-i",
+        "/Users/andersoncancado/Documents/dev/MATMA/notes/p1-ec2-access.pem"
+      ],
+      "projects": [
+        {
+          "paths": [
+            "/home/ubuntu"
+          ]
+        }
+      ]
+    },
+    {
+      "host": "13.62.50.227",
+      "username": "ubuntu",
+      "args": [
+        "-i",
+        "/Users/andersoncancado/Documents/dev/MATMA/notes/p1-ec2-access.pem"
+      ],
+      "projects": [
+        {
+          "paths": [
+            "/home/ubuntu"
+          ]
+        }
+      ]
+    }
+  ],
+  "show_edit_predictions": false,
+  "theme": "Andromeda",
+  "vim_mode": true,
+  "ui_font_size": 16,
+  "buffer_font_size": 14,
+  "telemetry": {
+    "enabled": false
+  }
+}
