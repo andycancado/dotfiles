@@ -7,7 +7,7 @@
           "name": "gemini-2.5-flash",
           "limit": {
             "context": 10000,
-            "output": 5000
+            "output": 1000
           }
         }
       }
