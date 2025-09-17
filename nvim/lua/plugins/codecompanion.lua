@@ -115,7 +115,7 @@ end
 
 local gemini_fn = function()
   local gemini_config = {
-    env = { api_key = "GEMINI_API_KEY" },
+    -- env = { api_key = "GEMINI_API_KEY" },
   }
   return require("codecompanion.adapters").extend("gemini", gemini_config)
 end
@@ -203,7 +203,7 @@ return {
       "ibhagwan/fzf-lua", -- For fzf provider, file or buffer picker
       "jellydn/spinner.nvim", -- Show loading spinner when request is started
       "nvim-telescope/telescope.nvim",
-      "ravitemer/codecompanion-history.nvim",
+      -- "ravitemer/codecompanion-history.nvim",
       "j-hui/fidget.nvim",
       {
         "Davidyz/VectorCode", -- Index and search code in your repositories
@@ -222,31 +222,31 @@ return {
     },
     opts = {
       extensions = {
-        history = {
-          enabled = true,
-          opts = {
-            -- Keymap to open history from chat buffer (default: gh)
-            keymap = "gh",
-            -- Keymap to save the current chat manually (when auto_save is disabled)
-            save_chat_keymap = "sc",
-            -- Save all chats by default (disable to save only manually using 'sc')
-            auto_save = true,
-            -- Number of days after which chats are automatically deleted (0 to disable)
-            expiration_days = 0,
-            -- Picker interface ("telescope" or "snacks" or "fzf-lua" or "default")
-            picker = "telescope",
-            -- Automatically generate titles for new chats
-            auto_generate_title = true,
-            ---On exiting and entering neovim, loads the last chat on opening chat
-            continue_last_chat = false,
-            ---When chat is cleared with `gx` delete the chat from history
-            delete_on_clearing_chat = false,
-            ---Directory path to save the chats
-            dir_to_save = vim.fn.stdpath("data") .. "/codecompanion-history",
-            ---Enable detailed logging for history extension
-            enable_logging = false,
-          },
-        },
+        -- history = {
+        --   enabled = true,
+        --   opts = {
+        --     -- Keymap to open history from chat buffer (default: gh)
+        --     keymap = "gh",
+        --     -- Keymap to save the current chat manually (when auto_save is disabled)
+        --     save_chat_keymap = "sc",
+        --     -- Save all chats by default (disable to save only manually using 'sc')
+        --     auto_save = true,
+        --     -- Number of days after which chats are automatically deleted (0 to disable)
+        --     expiration_days = 0,
+        --     -- Picker interface ("telescope" or "snacks" or "fzf-lua" or "default")
+        --     picker = "telescope",
+        --     -- Automatically generate titles for new chats
+        --     auto_generate_title = true,
+        --     ---On exiting and entering neovim, loads the last chat on opening chat
+        --     continue_last_chat = false,
+        --     ---When chat is cleared with `gx` delete the chat from history
+        --     delete_on_clearing_chat = false,
+        --     ---Directory path to save the chats
+        --     dir_to_save = vim.fn.stdpath("data") .. "/codecompanion-history",
+        --     ---Enable detailed logging for history extension
+        --     enable_logging = false,
+        --   },
+        -- },
         mcphub = {
           callback = "mcphub.extensions.codecompanion",
           opts = {
@@ -268,6 +268,31 @@ return {
         copilot = copilot_fn,
         gemini = gemini_fn,
         openrouter = openrouter_fn,
+      },
+      acp = {
+        gemini_cli = function()
+          return require("codecompanion.adapters").extend("gemini_cli", {
+            commands = {
+              flash = {
+                "gemini",
+                "--experimental-acp",
+                "-m",
+                "gemini-2.5-flash",
+              },
+              pro = {
+                "gemini",
+                "--experimental-acp",
+                "-m",
+                "gemini-2.5-pro",
+              },
+            },
+            defaults = {
+              -- auth_method = "gemini-api-key", -- "oauth-personal" | "gemini-api-key" | "vertex-ai"
+              auth_method = "oauth-personal",
+              -- auth_method = "vertex-ai",
+            },
+          })
+        end,
       },
       strategies = {
         chat = {

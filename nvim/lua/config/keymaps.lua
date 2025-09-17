@@ -55,12 +55,9 @@ end, { expr = true })
 -- O
 vim.keymap.set("n", "<leader>rw", 'diw"0P')
 
-
 vim.keymap.set("n", "gv", function()
   vim.lsp.buf.definition({ vsplit = true })
 end, { noremap = true, silent = true })
-
-
 
 -- don't ask
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -77,6 +74,13 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 vim.keymap.set("n", "]g", vim.diagnostic.goto_next)
 vim.keymap.set("n", "[g", vim.diagnostic.goto_prev)
 vim.api.nvim_set_keymap("n", "<C-l>", "<C-i>", { noremap = true, silent = true })
+
+vim.api.nvim_set_keymap(
+  "n",
+  "gdd",
+  "<cmd>vsplit<CR><cmd>lua vim.lsp.buf.definition()<CR>",
+  { noremap = true, silent = true }
+)
 
 -- Copilot toggle functionality
 -- local copilot_on = vim.g.copilot_enabled == 1
@@ -118,7 +122,7 @@ vim.keymap.set(
   Toggle_diagnostics,
   { noremap = true, silent = true, desc = "Toggle vim diagnostics" }
 )
-local isLspDiagnosticsVisible = true
+local isLspDiagnosticsVisible = false
 vim.keymap.set("n", "<leader>cx", function()
   isLspDiagnosticsVisible = not isLspDiagnosticsVisible
   vim.diagnostic.config({
@@ -126,7 +130,6 @@ vim.keymap.set("n", "<leader>cx", function()
     underline = isLspDiagnosticsVisible,
   })
 end, { desc = "Toggle vim diagnostics text" })
-
 
 -- local function visual_cursors_with_delay()
 --   -- Execute the vm-visual-cursors command.

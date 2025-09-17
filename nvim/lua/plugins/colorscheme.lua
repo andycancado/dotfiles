@@ -41,14 +41,29 @@ return {
     priority = 1000, -- Load colorscheme early
     config = function()
       local xeno = require("xeno")
-      xeno.new_theme('xeno-lilypad', {
-        base = '#181818',
+      xeno.new_theme("xeno-lilypad", {
+        base = "#181818",
         -- accent = '#565f73',
-        accent = '#8CBEFF',
+        accent = "#8CBEFF",
         contrast = 0.3,
+      })
+      xeno.new_theme("xeno-golden-hour", {
+        base = "#11100f",
+        accent = "#FFCC33",
+        contrast = 0.16,
       })
       -- vim.cmd("colorscheme xeno-lilypad")
       -- vim.cmd("colorscheme xeno-golden-hour")
+    end,
+  },
+  {
+    "shadowy-pycoder/vscode-gruber.nvim",
+    dependencies = { "rktjmp/lush.nvim" },
+    name = "vscode-gruber",
+    branch = "main",
+    priority = 1000,
+    config = function()
+      vim.cmd("colorscheme vscode-gruber")
     end,
   },
   {
@@ -58,9 +73,9 @@ return {
       -- colorscheme = "base16-gruber",
       -- colorscheme = "base16-0x96f",
       -- colorscheme = "base16-ashes",
-      -- colorscheme = "techbase",
-      colorscheme = "default",
-      -- colorscheme = "naysayer",
+      colorscheme = "techbase-hc",
+      -- colorscheme = "default",
+      -- colorscheme = "kanso-zen",
     },
   },
 }

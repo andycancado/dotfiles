@@ -122,6 +122,11 @@ setenv FZF_CTRL_T_COMMAND 'fd --type file --follow'
 setenv FZF_DEFAULT_OPTS '--height 20%'
 
 
+function mkcd
+    mkdir -p $argv[1]
+    cd $argv[1]
+end
+
 function fish_user_key_bindings
 	bind \cz 'fg>/dev/null ^/dev/null'
 	if functions -q fzf_key_bindings
@@ -143,7 +148,7 @@ function fish_prompt
 	set_color green
 	printf '%s ' (__fish_git_prompt)
 	set_color red
-	echo -n '| '
+	echo -n '~> '
 	set_color normal
 end
 

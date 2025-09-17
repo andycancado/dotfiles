@@ -16,12 +16,12 @@ return {
   },
   -- Disable mini buffer remove and use Snacks buffer delete instead
   {
-    "echasnovski/mini.bufremove",
+    "nvim-mini/mini.bufremove",
     enabled = false,
   },
   -- Disable mini cursor word and use Snacks words instead
   {
-    "echasnovski/mini.cursorword",
+    "nvim-mini/mini.cursorword",
     enabled = false,
   },
   -- Disable nvim notify and use Snacks notify instead
@@ -102,65 +102,65 @@ return {
           },
         },
       },
-      dashboard = {
-        enabled = true,
-        preset = {
-          header = "Deleted code is debugged code!",
-          keys = {
-            { icon = "📄", key = "e", desc = "new file", action = ":ene | startinsert" },
-            { icon = "📝", key = "t", desc = "todo", action = "<cmd>e ~/.todo<CR>" },
-            { icon = "✅", key = "h", desc = "checkhealth", action = "<cmd>checkhealth<CR>" },
-            {
-              icon = "🔌",
-              key = "p",
-              desc = "plugins",
-              action = "<cmd>Lazy<CR>",
-              enabled = package.loaded.lazy ~= nil,
-            },
-            { icon = "❌", key = "q", desc = "Quit", action = "<cmd>qa<CR>" },
-          },
-        },
-        sections = {
-          { section = "header" },
-          { title = "📂 Recent files", padding = 1 },
-          { section = "recent_files", limit = 8, indent = 4, padding = 2 },
-          { title = "🔖 Quick commands", padding = 1 },
-          { section = "keys", indent = 4, padding = 2 },
-          {
-            icon = "🧿",
-            title = "Git status:  "
-              .. vim.system({ "git", "branch", "--show-current" }, { text = true }):wait().stdout,
-            enabled = true, --Snacks.git.get_root() ~= nil,
-            padding = 1,
-          },
-          {
-            desc = "🔱 git diff",
-            enabled = true, --Snacks.git.get_root() ~= nil,
-            indent = 4,
-            padding = 1,
-            key = "d",
-            action = function()
-              require("fzf-lua").fzf_exec("git branch -a --format='%(refname:short)'", {
-                prompt = "diff branch:",
-                actions = {
-                  ["default"] = function(selected)
-                    vim.cmd.DiffviewOpen({ args = { selected[1] } })
-                  end,
-                },
-              })
-            end,
-          },
-          {
-            section = "terminal",
-            enabled = true, --Snacks.git.get_root() ~= nil,
-            cmd = "git status --short",
-            height = 5,
-            padding = 1,
-            ttl = 5 * 60,
-            indent = 3,
-          },
-        },
-      },
+      dashboard = { enabled = false },
+      --     enabled = false,
+      --     preset = {
+      --       header = "Deleted code is debugged code!",
+      --       keys = {
+      --         { icon = "📄", key = "e", desc = "new file", action = ":ene | startinsert" },
+      --         { icon = "📝", key = "t", desc = "todo", action = "<cmd>e ~/.todo<CR>" },
+      --         { icon = "✅", key = "h", desc = "checkhealth", action = "<cmd>checkhealth<CR>" },
+      --         {
+      --           icon = "🔌",
+      --           key = "p",
+      --           desc = "plugins",
+      --           action = "<cmd>Lazy<CR>",
+      --           enabled = package.loaded.lazy ~= nil,
+      --         },
+      --         { icon = "❌", key = "q", desc = "Quit", action = "<cmd>qa<CR>" },
+      --       },
+      --     },
+      --     sections = {
+      --       { section = "header" },
+      --       { title = "📂 Recent files", padding = 1 },
+      --       { section = "recent_files", limit = 8, indent = 4, padding = 2 },
+      --       { title = "🔖 Quick commands", padding = 1 },
+      --       { section = "keys", indent = 4, padding = 2 },
+      --       {
+      --         icon = "🧿",
+      --         title = "Git status:  "
+      --           .. vim.system({ "git", "branch", "--show-current" }, { text = true }):wait().stdout,
+      --         enabled = true, --Snacks.git.get_root() ~= nil,
+      --         padding = 1,
+      --       },
+      --       {
+      --         desc = "🔱 git diff",
+      --         enabled = true, --Snacks.git.get_root() ~= nil,
+      --         indent = 4,
+      --         padding = 1,
+      --         key = "d",
+      --         action = function()
+      --           require("fzf-lua").fzf_exec("git branch -a --format='%(refname:short)'", {
+      --             prompt = "diff branch:",
+      --             actions = {
+      --               ["default"] = function(selected)
+      --                 vim.cmd.DiffviewOpen({ args = { selected[1] } })
+      --               end,
+      --             },
+      --           })
+      --         end,
+      --       },
+      --       {
+      --         section = "terminal",
+      --         enabled = true, --Snacks.git.get_root() ~= nil,
+      --         cmd = "git status --short",
+      --         height = 5,
+      --         padding = 1,
+      --         ttl = 5 * 60,
+      --         indent = 3,
+      --       },
+      --     },
+      --   },
     },
     keys = {
       {

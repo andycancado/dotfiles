@@ -1,8 +1,11 @@
 return {
   "saghen/blink.cmp",
-  depends = { "rafamadriz/friendly-snippets" },
   version = "v0.*",
   opts = {
+    -- providers = {
+    --   "lsp",
+    --   "buffer",
+    -- },
     keymap = {
       -- preset = "enter"
       preset = "super-tab",
@@ -27,7 +30,7 @@ return {
       -- show with a list of providers
       ["<C-x>"] = {
         function(cmp)
-          cmp.show({ providers = { "snippets", "lsp" } })
+          cmp.show({ providers = { "lsp" } })
         end,
       },
     },
@@ -41,7 +44,7 @@ return {
     completion = {
       ghost_text = {
         enabled = true,
-        -- show_with_menu = false, -- only show when menu is closed
+        show_with_menu = false, -- only show when menu is closed
       },
 
       menu = {

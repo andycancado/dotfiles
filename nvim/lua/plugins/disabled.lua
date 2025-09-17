@@ -18,4 +18,5 @@ return {
   { "nvim-lualine/lualine.nvim", enabled = true },
   { "ggandor/leap.nvim", enabled = false },
   { "folke/flash.nvim", enabled = false },
+  { "lukas-reineke/indent-blankline.nvim", enabled = false },
 }

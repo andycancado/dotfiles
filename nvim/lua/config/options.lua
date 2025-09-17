@@ -7,10 +7,10 @@
 -- vim.opt.encoding = "utf-8"
 -- vim.opt.fileencoding = "utf-8"
 --
--- vim.opt.number = true
 --
 vim.opt.shell = "/bin/zsh"
-vim.opt.relativenumber = true
+vim.opt.relativenumber = false
+vim.opt.number = false
 vim.opt.title = true
 vim.opt.autoindent = true
 vim.opt.smartindent = true
@@ -41,6 +41,8 @@ vim.opt.virtualedit = "block"
 vim.opt.inccommand = "split"
 vim.g.autoformat = false
 
+vim.opt.shortmess:remove("I")
+
 -- Undercurl
 vim.cmd([[let &t_Cs = "\e[4:3m"]])
 vim.cmd([[let &t_Ce = "\e[4:0m"]])
@@ -64,13 +66,24 @@ vim.cmd("cnoreabbrev Q q")
 vim.g.lazyvim_python_lsp = "basedpyright"
 vim.g.lazyvim_blink_main = true
 
--- folding
-vim.opt.foldmethod = "expr"
-vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
-vim.opt.foldlevel = 99
+-- -- folding
+-- vim.opt.foldmethod = "expr"
+-- vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+-- vim.opt.foldlevel = 99
 --
 vim.opt.startofline = true -- Move cursor to the first non-blank character.
 vim.o.winborder = "rounded"
+
+-- Set colorscheme
+vim.cmd("colorscheme quiet")
+
+-- Set background
+vim.cmd([[highlight Normal guibg=#191724 ctermbg=233]])
+
+-- Set highlight groups
+vim.api.nvim_set_hl(0, "Keyword", { bold = true, fg = "#e0def4" })
+vim.api.nvim_set_hl(0, "Constant", { fg = "#908caa" })
+vim.api.nvim_set_hl(0, "Comment", { italic = true, fg = "#eb6f92" })
 
 --
 -- vim.diagnostic.config({

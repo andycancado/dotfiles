@@ -1,6 +1,6 @@
 return {
   "A7Lavinraj/fyler.nvim",
-  dependencies = { "echasnovski/mini.icons" },
+  dependencies = { "nvim-mini/mini.icons" },
   branch = "stable",
     opts = {
       views = {

@@ -23,35 +23,9 @@ require("lazy").setup({
     --
 
     { import = "plugins" },
-    -- {
-    --   "shellRaining/hlchunk.nvim",
-    --   event = { "BufReadPre", "BufNewFile" },
-    --   config = function()
-    --     require("hlchunk").setup({
-    --       chunk = {
-    --         enable = true,
-    --       },
-    --       -- indent = {
-    --       --   enable = true,
-    --       --   -- ...
-    --       -- },
-    --     })
-    --   end,
-    -- },
     {
       "nvim-tree/nvim-web-devicons",
     },
-    {
-      "felpafel/inlay-hint.nvim",
-      event = "LspAttach",
-      config = true,
-      opts = {
-        virt_text_pos = "inline", -- "inline"
-      },
-    },
-    -- {
-    --   "reachingforthejack/cursortab.nvim"
-    -- }
     {
       "Davidyz/VectorCode",
       version = "*", -- optional, depending on whether you're on nightly or release
@@ -61,7 +35,7 @@ require("lazy").setup({
     },
     {
       "A7Lavinraj/fyler.nvim",
-      dependencies = { "echasnovski/mini.icons" },
+      dependencies = { "nvim-mini/mini.icons" },
       opts = {
         views = {
           file_tree = {
@@ -101,20 +75,3 @@ require("lazy").setup({
   },
 })
 
--- require("codecompanion").setup({
---   strategies = {
---     chat = {
---       tools = {
---         ["mcp"] = {
---           callback = require("mcphub.extensions.codecompanion"),
---           description = "Call tools and resources from the MCP Servers",
---           opts = {
---             show_result_in_chat = true, -- Show the mcp tool result in the chat buffer
---             make_slash_commands = true,
---             make_vars = true, -- make chat #variables from MCP server resources
---           },
---         },
---       },
---     },
---   },
--- })
