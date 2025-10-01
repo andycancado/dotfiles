@@ -27,24 +27,11 @@ require("lazy").setup({
       "nvim-tree/nvim-web-devicons",
     },
     {
-      "Davidyz/VectorCode",
-      version = "*", -- optional, depending on whether you're on nightly or release
-      build = "uv tool upgrade vectorcode",
-      -- build = "pipx upgrade vectorcode", -- optional but recommended if you set `version = "*"`
-      dependencies = { "nvim-lua/plenary.nvim" },
-    },
-    {
-      "A7Lavinraj/fyler.nvim",
-      dependencies = { "nvim-mini/mini.icons" },
+      "sphamba/smear-cursor.nvim",
       opts = {
-        views = {
-          file_tree = {
-            width = 0.2,
-            height = 0.8,
-            kind = "split:left",
-            border = "single",
-          },
-        },
+        stiffness = 0.5,
+        trailing_stiffness = 0.5,
+        matrix_pixel_threshold = 0.5,
       },
     },
   },
@@ -74,4 +61,3 @@ require("lazy").setup({
     },
   },
 })
-
