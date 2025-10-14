@@ -23,39 +23,10 @@ return {
   },
   {
     "webhooked/kanso.nvim",
-    lazy = false,
     opts = {},
     -- vim.cmd.colorscheme("kanso-ink")
-    config = function() end,
   },
-  {
-    "mcauley-penney/techbase.nvim",
-    config = function(_, opts)
-      -- vim.cmd.colorscheme("techbase")
-    end,
-    priority = 1000,
-  },
-  {
-    "kyza0d/xeno.nvim",
-    lazy = false,
-    priority = 1000, -- Load colorscheme early
-    config = function()
-      local xeno = require("xeno")
-      xeno.new_theme("xeno-lilypad", {
-        base = "#181818",
-        -- accent = '#565f73',
-        accent = "#8CBEFF",
-        contrast = 0.3,
-      })
-      xeno.new_theme("xeno-golden-hour", {
-        base = "#11100f",
-        accent = "#FFCC33",
-        contrast = 0.16,
-      })
-      -- vim.cmd("colorscheme xeno-lilypad")
-      -- vim.cmd("colorscheme xeno-golden-hour")
-    end,
-  },
+  { "santhosh-tekuri/silence.nvim" },
   {
     "shadowy-pycoder/vscode-gruber.nvim",
     dependencies = { "rktjmp/lush.nvim" },
@@ -63,19 +34,15 @@ return {
     branch = "main",
     priority = 1000,
     config = function()
-      vim.cmd("colorscheme vscode-gruber")
+      -- vim.cmd("colorscheme vscode-gruber")
     end,
   },
   {
     "LazyVim/LazyVim",
     opts = {
-      -- transparent_mode = false,
-      -- colorscheme = "base16-gruber",
-      -- colorscheme = "base16-0x96f",
-      -- colorscheme = "base16-ashes",
-      colorscheme = "techbase-hc",
-      -- colorscheme = "default",
+      transparent_mode = false,
       -- colorscheme = "kanso-zen",
+      colorscheme = "silence",
     },
   },
 }
