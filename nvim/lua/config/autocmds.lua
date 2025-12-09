@@ -119,6 +119,7 @@ vim.api.nvim_create_autocmd("BufEnter", {
 	end,
 })
 
+--
 -- Call initially to set highlights
 -- set_diff_highlights()
 -- local group = vim.api.nvim_create_augroup('OoO', {})

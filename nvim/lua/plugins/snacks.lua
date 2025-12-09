@@ -58,8 +58,9 @@ return {
     ---@type snacks.Config
     opts = {
       indent = {
-        enabled = false,
+        enabled = true,
       },
+      gh = {},
       image = {},
       explorer = {},
       bigfile = { enabled = true },
@@ -73,6 +74,8 @@ return {
           explorer = {
             replace_netrw = true,
           },
+          gh_issue = {},
+          gh_pr = {},
         },
       },
       scroll = { enabled = false },
@@ -507,6 +510,34 @@ return {
           Snacks.picker.lsp_symbols()
         end,
         desc = "LSP Symbols",
+      },
+      {
+        "<leader>gi",
+        function()
+          Snacks.picker.gh_issue()
+        end,
+        desc = "GitHub Issues (open)",
+      },
+      {
+        "<leader>gI",
+        function()
+          Snacks.picker.gh_issue({ state = "all" })
+        end,
+        desc = "GitHub Issues (all)",
+      },
+      {
+        "<leader>gp",
+        function()
+          Snacks.picker.gh_pr()
+        end,
+        desc = "GitHub Pull Requests (open)",
+      },
+      {
+        "<leader>gP",
+        function()
+          Snacks.picker.gh_pr({ state = "all" })
+        end,
+        desc = "GitHub Pull Requests (all)",
       },
     },
 

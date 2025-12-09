@@ -3,7 +3,6 @@ return {
   { "folke/noice.nvim", enabled = false },
   { "nvim-pack/nvim-spectre", enabled = false },
   -- temporarily disabled due to empty file issue
-  { "nvim-navic", enabled = true },
   -- { "hrsh7th/nvim-cmp", enabled = true },
   { "giuxtaposition/blink-cmp-copilot", enabled = true },
   -- { "copilotlsp-nvim/copilot-lsp", enabled = true },

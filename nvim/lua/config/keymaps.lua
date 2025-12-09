@@ -88,11 +88,11 @@ local copilot_on = true
 vim.api.nvim_create_user_command("AIToggle", function()
   if copilot_on then
     vim.cmd("Copilot disable")
-    vim.cmd("LspStop copilot_ls")
+    -- vim.cmd("LspStop copilot_ls")
     print("Copilot OFF")
   else
     vim.cmd("Copilot enable")
-    vim.cmd("LspStart copilot_ls")
+    -- vim.cmd("LspStart copilot_ls")
     print("Copilot ON")
   end
   copilot_on = not copilot_on

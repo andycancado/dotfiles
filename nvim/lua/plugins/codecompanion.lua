@@ -157,6 +157,7 @@ end
 
 local copilot_fn = function()
   local copilot_config = {
+      model = "gpt-5-mini",
     env = {
       model = "gpt-5-mini",
     },
