@@ -35,9 +35,10 @@ require("lazy").setup({
       },
     },
     {
-      "esmuellert/vscode-diff.nvim",
-      dependencies = { "MunifTanjim/nui.nvim" },
+      "mrcjkb/rustaceanvim",
+      lazy = false, -- This plugin is already lazy
     },
+    { "nguyenvukhang/nvim-toggler" },
   },
   defaults = {
     -- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.

@@ -1,6 +1,6 @@
 return {
   -- { "reachingforthejack/cursortab.nvim", enaled = false },
-  { "folke/noice.nvim", enabled = false },
+  { "folke/noice.nvim", enabled = true },
   { "nvim-pack/nvim-spectre", enabled = false },
   -- temporarily disabled due to empty file issue
   -- { "hrsh7th/nvim-cmp", enabled = true },
@@ -9,7 +9,7 @@ return {
   -- { "sphamba/smear-cursor.nvim", enabled = not vim.fn.has("mac") },
   { "linux-cultist/venv-selector.nvim", enabled = false },
   { "nvim-lualine/lualine.nvim", enabled = true },
-  { "ggandor/leap.nvim", enabled = false },
   { "folke/flash.nvim", enabled = false },
   { "lukas-reineke/indent-blankline.nvim", enabled = false },
+  { "iamkarasik/sonarqube.nvim", enabled = false },
 }

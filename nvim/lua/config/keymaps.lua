@@ -28,7 +28,6 @@ vim.api.nvim_set_keymap("n", "<C-x>", ":bd<CR>", { noremap = true, silent = true
 -- -- mini file
 -- vim.keymap.set("n", "<space>e", "<cmd>lua MiniFiles.open()<cr>")
 
-vim.keymap.set("n", "<space>e", "<cmd>Fyler<cr>")
 -- Indent while remaining in visual mode.
 vim.keymap.set("v", "<", "<gv")
 vim.keymap.set("v", ">", ">gv")
@@ -131,26 +130,29 @@ vim.keymap.set("n", "<leader>cx", function()
   })
 end, { desc = "Toggle vim diagnostics text" })
 
--- local function visual_cursors_with_delay()
---   -- Execute the vm-visual-cursors command.
---   vim.cmd('silent! execute "normal! \\<Plug>(VM-Visual-Cursors)"')
---   -- Introduce delay via VimScript's 'sleep' (set to 500 milliseconds here).
---   vim.cmd("sleep 200m")
---   -- Press 'A' in normal mode after the delay.
---   vim.cmd('silent! execute "normal! A"')
--- end
---
--- wk.register({
---   m = {
---     name = "Visual Multi",
---     a = { "<Plug>(VM-Select-All)<Tab>", "Select All", mode = { "n" } },
---     r = { "<Plug>(VM-Start-Regex-Search)", "Start Regex Search", mode = { "n" } },
---     p = { "<Plug>(VM-Add-Cursor-At-Pos)", "Add Cursor At Pos", mode = { "n" } },
---     v = { visual_cursors_with_delay, "Visual Cursors", mode = { "v" } },
---     o = { "<Plug>(VM-Toggle-Mappings)", "Toggle Mapping", mode = { "n" } },
---   },
--- }, { prefix = "<leader>" })
+-- align on delimiter in visual mode
+vim.keymap.set('x', '<leader>a', function()
+  -- Prompt for delimiter
+  local delim = vim.fn.input('Align on: ')
+  if delim == '' then return end
 
+  -- Escape delimiter for Lua patterns and Vim regex
+  local delim_esc = delim:gsub("([%^%$%(%)%%%.%[%]%*%+%-%?])", "%%%1")
+
+  -- Get visual selection range
+  local start_line = vim.fn.line("'<")
+  local end_line = vim.fn.line("'>")
+
+  -- Build and run the substitute command
+  local cmd = string.format(
+    [[%d,%ds/^\(.*\)\s*%s\s*\(.*\)/\=printf("%%-20s%s%%s", submatch(1), "%s", submatch(2))/]],
+    start_line, end_line, delim_esc, delim
+  )
+  vim.cmd(cmd)
+end, { desc = "Align on delimiter" })
+
+-- toggler
+vim.keymap.set({ 'n', 'v' }, '<leader>ct', require('nvim-toggler').toggle)
 --
 -- -- don't be a pussy, just use hjkl
 -- vim.keymap.set("i", "<Up>", '<C-o>:echom "--> k <-- "<CR>')

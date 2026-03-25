@@ -60,6 +60,9 @@ return {
       indent = {
         enabled = true,
       },
+      animations = {
+        enabled = false,
+      },
       gh = {},
       image = {},
       explorer = {},

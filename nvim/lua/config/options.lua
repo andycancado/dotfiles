@@ -8,9 +8,9 @@
 -- vim.opt.fileencoding = "utf-8"
 --
 --
-vim.opt.shell = "/bin/zsh"
+vim.opt.shell = "/bin/fish"
 vim.opt.relativenumber = false
-vim.opt.number = false
+vim.opt.number = true
 vim.opt.title = true
 vim.opt.autoindent = true
 vim.opt.smartindent = true
@@ -20,7 +20,7 @@ vim.opt.showcmd = true
 vim.opt.cmdheight = 1
 vim.opt.laststatus = 2
 vim.opt.expandtab = true
-vim.opt.scrolloff = 999
+vim.opt.scrolloff = 10
 vim.opt.ignorecase = true -- Case insensitive searching UNLESS /C or capital in search
 vim.opt.smarttab = true
 vim.opt.breakindent = true
@@ -40,7 +40,7 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.virtualedit = "block"
 vim.opt.inccommand = "split"
 vim.g.autoformat = false
-
+vim.g.ttyfast = true
 vim.opt.shortmess:remove("I")
 
 -- Undercurl
@@ -63,7 +63,8 @@ vim.cmd("cnoreabbrev WQ wq")
 vim.cmd("cnoreabbrev W w")
 vim.cmd("cnoreabbrev Q q")
 
-vim.g.lazyvim_python_lsp = "basedpyright"
+vim.g.lazyvim_python_lsp = "ty"
+-- vim.g.lazyvim_python_lsp = "basedpyright"
 vim.g.lazyvim_blink_main = true
 
 -- -- folding
@@ -73,9 +74,6 @@ vim.g.lazyvim_blink_main = true
 --
 vim.opt.startofline = true -- Move cursor to the first non-blank character.
 vim.o.winborder = "rounded"
-
--- Set colorscheme
-vim.cmd("colorscheme quiet")
 
 -- Set background
 vim.cmd([[highlight Normal guibg=#191724 ctermbg=233]])
