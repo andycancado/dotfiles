@@ -8,6 +8,6 @@ if [[ "$status" == "on" ]]; then
   tmux set-option -g pane-border-status off
   tmux set-option -g status off
 elif [[ "$status" == "off" ]]; then
-  tmux set-option -g pane-border-status off
+  tmux set-option -g pane-border-status on
   tmux set-option -g status on
 fi

@@ -1,13 +1,15 @@
-font-family = BlexMono Nerd Font
+# font-family = BlexMono Nerd Font
 # font-family = CodeNewRoman Nerd Font
 #font-family = Iosevka Nerd Font
 # font-family = SFMono Nerd Font
+# font-family = FuraMono Nerd Font
+font-family = FuraCode Nerd Font
 font-size =  14
 
 window-theme = ghostty
 bold-is-bright = true
 
-theme = nord
+theme = 0x96f
 # cursor-style = block
 cursor-invert-fg-bg = true
 #adjust-cell-height = 35%
