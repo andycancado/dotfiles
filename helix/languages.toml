@@ -1,0 +1,59 @@
+[language-server.ltex-ls.config]
+ltex.language     = "en-GB"
+ltex.dictionary = { "en-GB" = ["builtin"] }
+ltex.disabledRules = { "en-GB" = ["PROFANITY"] }
+
+[language-server.rust-analyzer.config]
+rustfmt = { extraArgs = ["+nightly"] }
+
+[[language]]
+name = "markdown"
+auto-format = true
+formatter = { command = "dprint", args = ["fmt", "--stdin", "md"] }
+
+
+[[language]]
+name = "python"
+language-id = "python"
+auto-format = true
+# language-servers = ["basedpyright", "ruff", "scls"]
+language-servers = ["ty"]
+file-types = ["py", "ipynb"]
+comment-token = "#"
+shebangs = ["python"]
+roots = ["pyproject.toml", "setup.py", "poetry.lock", ".git", ".jj", ".venv/"]
+
+[language-server.ty]
+command = "ty"
+args = ["server"]
+
+
+[[language]]
+name = "git-commit"
+rulers = [50, 72]
+auto-format = true
+language-servers = [{ name = "ltex-ls" }]
+
+[[language]]
+name = "typescript"
+formatter = { command = "prettier", args = ["--parser", "typescript"] }
+auto-format = true
+
+[[language]]
+name = "toml"
+auto-format = true
+
+[[language]]
+name = "yaml"
+auto-format = true
+
+[[language]]
+name = "rust"
+auto-format = true
+
+language-servers = ["ltex-ls"]
+soft-wrap.enable = true
+text-width = 80
+rulers = [80]
+formatter = { command = "fold", args = ["-s" ,"-w", "80"] }
+#auto-format = true

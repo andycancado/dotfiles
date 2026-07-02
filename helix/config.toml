@@ -1,0 +1,55 @@
+theme = "catppucin_frappe"
+
+[editor]
+cursorline = true
+color-modes = true
+true-color = true
+
+[editor.file-picker]
+hidden = true
+git-ignore = true
+
+[editor.soft-wrap]
+enable = true
+
+[editor.indent-guides]
+character = "╎"
+render = true
+
+#[editor.whitespace]
+#render = "all"
+
+[editor.lsp]
+display-messages = true
+display-inlay-hints = true
+
+[editor.statusline]
+left = [
+  "mode",
+  "spacer",
+  "version-control",
+  "file-name",
+  "file-modification-indicator",
+]
+right = [
+  "spinner",
+  "spacer",
+  "diagnostics",
+  "workspace-diagnostics",
+  "position-percentage",
+  "position",
+  "file-encoding",
+  "file-type",
+]
+
+# dont be a pussy
+[keys.insert]
+up = "no_op"
+down = "no_op"
+left = "no_op"
+right = "no_op"
+pageup = "no_op"
+pagedown = "no_op"
+home = "no_op"
+end = "no_op"
+
